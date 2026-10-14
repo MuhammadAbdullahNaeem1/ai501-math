@@ -1,0 +1,39 @@
+{
+  "short": "AI 501",
+  "subtitle": "Mathematics for AI · Fall 2026",
+  "nav": [
+    { "id": "index", "title": "Home", "file": "index.md" },
+    { "id": "start-here", "title": "Start here (how to use)", "file": "start-here.md" },
+    { "section": "Lectures" },
+    { "id": "l00", "title": "L00 · Course Overview & ML", "children": [
+      { "id": "l00-notes", "title": "Notes", "file": "lectures/l00.md" },
+      { "id": "l00-quiz", "title": "Practice quizzes", "file": "quizzes/l00-quiz.md" } ] },
+    { "id": "l01", "title": "L01 · Vectors", "children": [
+      { "id": "l01-notes", "title": "Notes", "file": "lectures/l01.md" },
+      { "id": "l01-quiz", "title": "Practice quizzes", "file": "quizzes/l01-quiz.md" } ] },
+    { "id": "l02", "title": "L02 · Matrices & Linear Systems", "children": [
+      { "id": "l02-notes", "title": "Notes", "file": "lectures/l02.md" },
+      { "id": "l02-quiz", "title": "Practice quizzes", "file": "quizzes/l02-quiz.md" } ] },
+    { "id": "l03", "title": "L03 · Rank, Column & Null Space", "children": [
+      { "id": "l03-notes", "title": "Notes", "file": "lectures/l03.md" },
+      { "id": "l03-quiz", "title": "Practice quizzes", "file": "quizzes/l03-quiz.md" } ] },
+    { "id": "l04", "title": "L04 · Supervised Learning & kNN", "children": [
+      { "id": "l04-notes", "title": "Notes", "file": "lectures/l04.md" },
+      { "id": "l04-quiz", "title": "Practice quizzes", "file": "quizzes/l04-quiz.md" } ] },
+    { "id": "l05", "title": "L05 · Regression & Regularization", "children": [
+      { "id": "l05-notes", "title": "Notes", "file": "lectures/l05.md" },
+      { "id": "l05-quiz", "title": "Practice quizzes", "file": "quizzes/l05-quiz.md" } ] },
+    { "id": "l06", "title": "L06 · Eigenvalue Decomposition", "children": [
+      { "id": "l06-notes", "title": "Notes", "file": "lectures/l06.md" },
+      { "id": "l06-quiz", "title": "Practice quizzes", "file": "quizzes/l06-quiz.md" } ] },
+    { "section": "Mid exam (18 Oct)" },
+    { "id": "mid", "title": "Mid prep", "children": [
+      { "id": "mid-guide", "title": "Mid guide & formula sheet", "file": "mids/mid-guide.md" },
+      { "id": "mid-mock-1", "title": "Mock Mid 1", "file": "mids/mock-1.md" },
+      { "id": "mid-mock-2", "title": "Mock Mid 2", "file": "mids/mock-2.md" },
+      { "id": "mid-mock-3", "title": "Mock Mid 3", "file": "mids/mock-3.md" } ] },
+    { "section": "Archive" },
+    { "id": "quizzes-2026", "title": "Real quizzes 2026 (solved)", "file": "quizzes-2026.md" },
+    { "id": "resources", "title": "PDFs, problem sets & past papers", "file": "resources.md" }
+  ]
+}
