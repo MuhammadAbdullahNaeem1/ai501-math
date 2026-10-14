@@ -3,6 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const { marked } = require('marked');
+marked.setOptions({ breaks: true });
 const katex = require('katex');
 
 const ROOT = __dirname;
