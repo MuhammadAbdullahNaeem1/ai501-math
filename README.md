@@ -5,4 +5,4 @@ Lecture notes, mock quizzes and mock mid exams for LUMS AI 501, with the course 
 - Content: `content/**/*.md` (Markdown + `$…$` maths + `:::` callout blocks)
 - Navigation: `site.json`
 - Build: `npm install && node build.js` → `_site/`
-- Deploy: pushing to `main` runs `.github/workflows/pages.yml` (Settings → Pages → Source: GitHub Actions)
+- Deploy: pushing to `main` builds the site and publishes `_site` to the `gh-pages` branch (served by GitHub Pages)
