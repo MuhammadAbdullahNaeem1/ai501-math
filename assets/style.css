@@ -262,3 +262,24 @@ details.hint > summary { color: var(--ml); }
   details.solution { break-inside: avoid; }
   h2 { page-break-after: avoid; } table, pre, .callout, figure { page-break-inside: avoid; }
 }
+
+/* ============ mathematical typesetting ============ */
+.katex { font-size: 1.08em; }
+.katex-display { margin: 1.25rem 0 1.35rem; padding: .5rem 0; }
+.katex-display > .katex { font-size: 1.12em; }
+.katex .boxed, .katex .fbox { border-color: var(--accent) !important; padding: .2em .45em !important; border-radius: 4px; }
+.callout .katex-display, .sol-body .katex-display { margin: .9rem 0 1rem; }
+/* "Step" lines inside derivations */
+p.step, .sol-body p strong:first-child { font-family: var(--sans); }
+.sol-body > p > strong:first-child, .callout > p > strong:first-child { font-family: var(--sans); font-size: .93em; letter-spacing: -.005em; }
+/* question parts (a), (b), (c) and MCQ options */
+.question ol, .sol-body ol, .callout ol.parts, main ol.parts { padding-left: 2.1rem; }
+.question ol > li::marker, .sol-body ol > li::marker { content: "(" counter(list-item, lower-alpha) ")  "; font-family: var(--sans); font-weight: 650; color: var(--muted); }
+.question ol > li { margin: .45rem 0; padding-left: .2rem; }
+.question ol > li > p, .sol-body ol > li > p { margin-bottom: .4rem; }
+.sol-body ol > li { margin: .9rem 0; }
+.answer-line { font-family: var(--sans); }
+@media (max-width: 1020px) {
+  .katex-display > .katex { font-size: 1.02em; }
+  .question ol, .sol-body ol { padding-left: 1.8rem; }
+}
