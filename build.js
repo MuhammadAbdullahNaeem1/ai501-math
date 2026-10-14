@@ -204,7 +204,14 @@ for (const p of pages) {
   const file = path.join(ROOT, 'content', p.file);
   if (!fs.existsSync(file)) { console.warn('missing', p.file); continue; }
   let src = fs.readFileSync(file, 'utf8');
-  // automatic TOC marker after the first h1 if not present
+  // Source material: collect the PDFs linked at the top of the page and append a reader at the bottom
+  const chips = (src.match(/<div class="pdf-links">([\s\S]*?)<\/div>/) || [])[1] || '';
+  const sources = [...chips.matchAll(/<a href="(pdfs\/[^"]+\.pdf)">([^<]+)<\/a>/g)].map(m => ({ url: m[1], title: m[2].replace(/&amp;/g, '&') }));
+  if (sources.length && /-notes$/.test(p.id)) {
+    const enc = JSON.stringify(sources).replace(/'/g, '&#39;');
+    src = src.replace(/(<div class="pdf-links">[\s\S]*?)(<\/div>)/, '$1<a class="jump" href="#source-material">Read them all on this page ↓</a>\n$2');
+    src += `\n\n## Source material\n\nThe original documents behind these notes. Pick a tab to read it here, page by page, or open it in a new tab.\n\n<div class="src-viewer" data-sources='${enc}'></div>\n`;
+  }
   const { html, toc } = mdToHtml(src);
   fs.writeFileSync(path.join(OUT, p.id + '.html'), page(p, html, toc));
   n++;
