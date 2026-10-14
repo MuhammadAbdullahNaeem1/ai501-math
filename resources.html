@@ -1,37 +1,49 @@
 <!doctype html>
 <html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>PDFs, problem sets & past papers · AI 501</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#fbfbfa" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#16161a" media="(prefers-color-scheme: dark)">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 <link rel="stylesheet" href="assets/style.css">
 </head><body>
-<button class="menu-btn" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
-<aside class="sidebar">
-  <a class="brand" href="index.html"><strong>AI 501</strong><span>Mathematics for AI · Fall 2026</span></a>
-  <nav class="nav"><a href="index.html" class="">Home</a>
-<a href="start-here.html" class="">Start here (how to use)</a>
+<header class="topbar">
+  <button class="iconbtn" id="menuBtn" aria-label="Open contents" aria-expanded="false"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  <a class="topbrand" href="index.html">AI 501<span>PDFs, problem sets & past papers</span></a>
+  <button class="iconbtn themebtn" aria-label="Toggle dark mode"><svg class="i-moon" viewBox="0 0 24 24" width="19" height="19"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="currentColor"/></svg><svg class="i-sun" viewBox="0 0 24 24" width="19" height="19"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></g></svg></button>
+</header>
+<div class="scrim" id="scrim"></div>
+<div class="wrap">
+<aside class="side" id="side">
+  <div class="side-head">
+    <a class="brand" href="index.html">AI 501 — Mathematics for AI<span>Mathematics for AI · Fall 2026</span></a>
+    <button class="iconbtn themebtn" aria-label="Toggle dark mode"><svg class="i-moon" viewBox="0 0 24 24" width="17" height="17"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="currentColor"/></svg><svg class="i-sun" viewBox="0 0 24 24" width="17" height="17"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></g></svg></button>
+  </div>
+  <nav><a href="index.html">Home</a>
+<a href="start-here.html">Start here (how to use)</a>
 <div class="nav-section">Lectures</div>
-<details class="group" ><summary><span>L00 · Course Overview & ML</span></summary><div class="kids"><a href="l00-notes.html" class="">Notes</a><a href="l00-quiz.html" class="">Practice quizzes</a></div></details>
-<details class="group" ><summary><span>L01 · Vectors</span></summary><div class="kids"><a href="l01-notes.html" class="">Notes</a><a href="l01-quiz.html" class="">Practice quizzes</a></div></details>
-<details class="group" ><summary><span>L02 · Matrices & Linear Systems</span></summary><div class="kids"><a href="l02-notes.html" class="">Notes</a><a href="l02-quiz.html" class="">Practice quizzes</a></div></details>
-<details class="group" ><summary><span>L03 · Rank, Column & Null Space</span></summary><div class="kids"><a href="l03-notes.html" class="">Notes</a><a href="l03-quiz.html" class="">Practice quizzes</a></div></details>
-<details class="group" ><summary><span>L04 · Supervised Learning & kNN</span></summary><div class="kids"><a href="l04-notes.html" class="">Notes</a><a href="l04-quiz.html" class="">Practice quizzes</a></div></details>
-<details class="group" ><summary><span>L05 · Regression & Regularization</span></summary><div class="kids"><a href="l05-notes.html" class="">Notes</a><a href="l05-quiz.html" class="">Practice quizzes</a></div></details>
-<details class="group" ><summary><span>L06 · Eigenvalue Decomposition</span></summary><div class="kids"><a href="l06-notes.html" class="">Notes</a><a href="l06-quiz.html" class="">Practice quizzes</a></div></details>
+<details class="grp"><summary>L00 · Course Overview & ML</summary><a href="l00-notes.html">Notes</a><a href="l00-quiz.html">Practice quizzes</a></details>
+<details class="grp"><summary>L01 · Vectors</summary><a href="l01-notes.html">Notes</a><a href="l01-quiz.html">Practice quizzes</a></details>
+<details class="grp"><summary>L02 · Matrices & Linear Systems</summary><a href="l02-notes.html">Notes</a><a href="l02-quiz.html">Practice quizzes</a></details>
+<details class="grp"><summary>L03 · Rank, Column & Null Space</summary><a href="l03-notes.html">Notes</a><a href="l03-quiz.html">Practice quizzes</a></details>
+<details class="grp"><summary>L04 · Supervised Learning & kNN</summary><a href="l04-notes.html">Notes</a><a href="l04-quiz.html">Practice quizzes</a></details>
+<details class="grp"><summary>L05 · Regression & Regularization</summary><a href="l05-notes.html">Notes</a><a href="l05-quiz.html">Practice quizzes</a></details>
+<details class="grp"><summary>L06 · Eigenvalue Decomposition</summary><a href="l06-notes.html">Notes</a><a href="l06-quiz.html">Practice quizzes</a></details>
 <div class="nav-section">Mid exam (18 Oct)</div>
-<details class="group" ><summary><span>Mid prep</span></summary><div class="kids"><a href="mid-guide.html" class="">Mid guide & formula sheet</a><a href="mid-mock-1.html" class="">Mock Mid 1</a><a href="mid-mock-2.html" class="">Mock Mid 2</a><a href="mid-mock-3.html" class="">Mock Mid 3</a></div></details>
+<details class="grp"><summary>Mid prep</summary><a href="mid-guide.html">Mid guide & formula sheet</a><a href="mid-mock-1.html">Mock Mid 1</a><a href="mid-mock-2.html">Mock Mid 2</a><a href="mid-mock-3.html">Mock Mid 3</a></details>
 <div class="nav-section">Archive</div>
-<a href="quizzes-2026.html" class="">Real quizzes 2026 (solved)</a>
-<a href="resources.html" class="active">PDFs, problem sets & past papers</a></nav>
+<a href="quizzes-2026.html">Real quizzes 2026 (solved)</a>
+<a href="resources.html" class="on" aria-current="page">PDFs, problem sets & past papers</a></nav>
+  <div class="toc"><div class="toc-title">On this page</div><a href="#lecture-slides-2026" class="">Lecture slides (2026)</a><a href="#revision-notes-2026" class="">Revision notes (2026)</a><a href="#problem-sets-and-tutorials-2026" class="">Problem sets and tutorials (2026)</a><a href="#past-papers-previous-offering" class="">Past papers (previous offering)</a><a href="#books" class="">Books</a></div>
 </aside>
-<main class="content">
-  <article>
-    
-    
-    <h1>PDFs, problem sets &amp; past papers</h1>
-<nav class="toc"><div class="toc-title">On this page</div><ol><li><a href="#lecture-slides-2026">Lecture slides (2026)</a></li><li><a href="#revision-notes-2026">Revision notes (2026)</a></li><li><a href="#problem-sets-and-tutorials-2026">Problem sets and tutorials (2026)</a></li><li><a href="#past-papers-previous-offering">Past papers (previous offering)</a></li><li><a href="#books">Books</a></li></ol></nav><h2 id="lecture-slides-2026"><a class="anchor" href="#lecture-slides-2026">#</a>Lecture slides (2026)</h2>
+<main>
+  
+  
+  <h1>PDFs, problem sets &amp; past papers</h1>
+<h2 id="lecture-slides-2026"><a class="anchor" href="#lecture-slides-2026" aria-hidden="true">#</a>Lecture slides (2026)</h2>
 <ul>
 <li><a href="pdfs/lectures/L00-Introduction.pdf">L00 Introduction</a></li>
 <li><a href="pdfs/lectures/L01-Vectors.pdf">L01 Vectors – notation and basic operations</a></li>
@@ -42,10 +54,10 @@
 <li><a href="pdfs/lectures/L06-Eigenvalue-Decomposition.pdf">L06 Eigenvalue decomposition</a></li>
 <li><a href="pdfs/AI501-Outline-2026.pdf">Course outline 2026</a></li>
 </ul>
-<h2 id="revision-notes-2026"><a class="anchor" href="#revision-notes-2026">#</a>Revision notes (2026)</h2>
+<h2 id="revision-notes-2026"><a class="anchor" href="#revision-notes-2026" aria-hidden="true">#</a>Revision notes (2026)</h2>
 <p><a href="pdfs/revision/R01-Vectors.pdf">Vectors (traffic control)</a> · <a href="pdfs/revision/R02-Matrices.pdf">Matrices (traffic networks)</a> · <a href="pdfs/revision/R03-04-Rank-kNN.pdf">Rank, spaces, kNN &amp; metrics</a> · <a href="pdfs/revision/R05-Regression.pdf">Linear &amp; polynomial regression</a> · <a href="pdfs/revision/R06-Ridge-Lasso.pdf">Ridge &amp; lasso</a> · <a href="pdfs/revision/R07-Eigen.pdf">Eigenvalue decomposition</a></p>
-<h2 id="problem-sets-and-tutorials-2026"><a class="anchor" href="#problem-sets-and-tutorials-2026">#</a>Problem sets and tutorials (2026)</h2>
-<table>
+<h2 id="problem-sets-and-tutorials-2026"><a class="anchor" href="#problem-sets-and-tutorials-2026" aria-hidden="true">#</a>Problem sets and tutorials (2026)</h2>
+<div class="tbl"><table>
 <thead>
 <tr>
 <th>Set</th>
@@ -98,8 +110,8 @@
 <td><a href="pdfs/psets/Worksheet-03.pdf">PDF</a></td>
 <td>worked in <a href="l05-notes.html">L05 notes</a></td>
 </tr>
-</tbody></table>
-<h2 id="past-papers-previous-offering"><a class="anchor" href="#past-papers-previous-offering">#</a>Past papers (previous offering)</h2>
+</tbody></table></div>
+<h2 id="past-papers-previous-offering"><a class="anchor" href="#past-papers-previous-offering" aria-hidden="true">#</a>Past papers (previous offering)</h2>
 <ul>
 <li>Mid 2025: <a href="pdfs/past/Mid-2025-Part1.pdf">Part I (MCQ)</a> · <a href="pdfs/past/Mid-2025-Part2.pdf">Part II (solved)</a></li>
 <li>Mid 2024: <a href="pdfs/past/Mid-2024-Part1.pdf">Part I (MCQ)</a> · <a href="pdfs/past/Mid-2024-Part2.pdf">Part II (solved)</a></li>
@@ -107,13 +119,16 @@
 <li>Homeworks 2025: <a href="pdfs/past/HW1-2025.pdf">HW1</a> (<a href="pdfs/past/HW1-2025-Solution.pdf">sol</a>) · <a href="pdfs/past/HW2-2025.pdf">HW2</a> (<a href="pdfs/past/HW2-2025-Solution.pdf">sol</a>) · <a href="pdfs/past/HW3-2025.pdf">HW3</a> (<a href="pdfs/past/HW3-2025-Solution.pdf">sol</a>)</li>
 <li>Tutorials 2025: <a href="pdfs/past/Tutorials-2025-Questions.pdf">questions</a> · <a href="pdfs/past/Tutorial-Notes-2025.pdf">notes</a> · <a href="pdfs/past/Tutorial-Practice-2025.pdf">practice problems</a></li>
 </ul>
-<h2 id="books"><a class="anchor" href="#books">#</a>Books</h2>
+<h2 id="books"><a class="anchor" href="#books" aria-hidden="true">#</a>Books</h2>
 <p>Deisenroth, Faisal &amp; Ong, <em>Mathematics for Machine Learning</em> (free at mml-book.github.io) · Boyd &amp; Vandenberghe, <em>Introduction to Applied Linear Algebra</em> (free at web.stanford.edu/~boyd/vmls).</p>
 
-  </article>
-  <footer class="pager">
-    <a class="prev" href="quizzes-2026.html"><small>Previous</small>Real quizzes 2026 (solved)</a>
+  <nav class="pagenav">
+    <a class="pv" href="quizzes-2026.html">← Previous<b>Real quizzes 2026 (solved)</b></a>
     <span></span>
-  </footer>
+  </nav>
+  <div class="foot">AI 501 · Fall 2026 · study notes</div>
 </main>
+</div>
+<div class="lightbox" id="lightbox" hidden><img alt=""><button class="iconbtn lb-close" aria-label="Close">✕</button></div>
+<script src="assets/site.js" defer></script>
 </body></html>

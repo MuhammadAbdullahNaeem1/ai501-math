@@ -1,36 +1,48 @@
 <!doctype html>
 <html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Notes · AI 501</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>L00 · Course Overview & ML — Notes · AI 501</title>
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#fbfbfa" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#16161a" media="(prefers-color-scheme: dark)">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 <link rel="stylesheet" href="assets/style.css">
 </head><body>
-<button class="menu-btn" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
-<aside class="sidebar">
-  <a class="brand" href="index.html"><strong>AI 501</strong><span>Mathematics for AI · Fall 2026</span></a>
-  <nav class="nav"><a href="index.html" class="">Home</a>
-<a href="start-here.html" class="">Start here (how to use)</a>
+<header class="topbar">
+  <button class="iconbtn" id="menuBtn" aria-label="Open contents" aria-expanded="false"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  <a class="topbrand" href="index.html">AI 501<span>L00 · Course Overview & ML</span></a>
+  <button class="iconbtn themebtn" aria-label="Toggle dark mode"><svg class="i-moon" viewBox="0 0 24 24" width="19" height="19"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="currentColor"/></svg><svg class="i-sun" viewBox="0 0 24 24" width="19" height="19"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></g></svg></button>
+</header>
+<div class="scrim" id="scrim"></div>
+<div class="wrap">
+<aside class="side" id="side">
+  <div class="side-head">
+    <a class="brand" href="index.html">AI 501 — Mathematics for AI<span>Mathematics for AI · Fall 2026</span></a>
+    <button class="iconbtn themebtn" aria-label="Toggle dark mode"><svg class="i-moon" viewBox="0 0 24 24" width="17" height="17"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="currentColor"/></svg><svg class="i-sun" viewBox="0 0 24 24" width="17" height="17"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></g></svg></button>
+  </div>
+  <nav><a href="index.html">Home</a>
+<a href="start-here.html">Start here (how to use)</a>
 <div class="nav-section">Lectures</div>
-<details class="group" open><summary><span>L00 · Course Overview & ML</span></summary><div class="kids"><a href="l00-notes.html" class="active">Notes</a><a href="l00-quiz.html" class="">Practice quizzes</a></div></details>
-<details class="group" ><summary><span>L01 · Vectors</span></summary><div class="kids"><a href="l01-notes.html" class="">Notes</a><a href="l01-quiz.html" class="">Practice quizzes</a></div></details>
-<details class="group" ><summary><span>L02 · Matrices & Linear Systems</span></summary><div class="kids"><a href="l02-notes.html" class="">Notes</a><a href="l02-quiz.html" class="">Practice quizzes</a></div></details>
-<details class="group" ><summary><span>L03 · Rank, Column & Null Space</span></summary><div class="kids"><a href="l03-notes.html" class="">Notes</a><a href="l03-quiz.html" class="">Practice quizzes</a></div></details>
-<details class="group" ><summary><span>L04 · Supervised Learning & kNN</span></summary><div class="kids"><a href="l04-notes.html" class="">Notes</a><a href="l04-quiz.html" class="">Practice quizzes</a></div></details>
-<details class="group" ><summary><span>L05 · Regression & Regularization</span></summary><div class="kids"><a href="l05-notes.html" class="">Notes</a><a href="l05-quiz.html" class="">Practice quizzes</a></div></details>
-<details class="group" ><summary><span>L06 · Eigenvalue Decomposition</span></summary><div class="kids"><a href="l06-notes.html" class="">Notes</a><a href="l06-quiz.html" class="">Practice quizzes</a></div></details>
+<details class="grp" open><summary>L00 · Course Overview & ML</summary><a href="l00-notes.html" class="on" aria-current="page">Notes</a><a href="l00-quiz.html">Practice quizzes</a></details>
+<details class="grp"><summary>L01 · Vectors</summary><a href="l01-notes.html">Notes</a><a href="l01-quiz.html">Practice quizzes</a></details>
+<details class="grp"><summary>L02 · Matrices & Linear Systems</summary><a href="l02-notes.html">Notes</a><a href="l02-quiz.html">Practice quizzes</a></details>
+<details class="grp"><summary>L03 · Rank, Column & Null Space</summary><a href="l03-notes.html">Notes</a><a href="l03-quiz.html">Practice quizzes</a></details>
+<details class="grp"><summary>L04 · Supervised Learning & kNN</summary><a href="l04-notes.html">Notes</a><a href="l04-quiz.html">Practice quizzes</a></details>
+<details class="grp"><summary>L05 · Regression & Regularization</summary><a href="l05-notes.html">Notes</a><a href="l05-quiz.html">Practice quizzes</a></details>
+<details class="grp"><summary>L06 · Eigenvalue Decomposition</summary><a href="l06-notes.html">Notes</a><a href="l06-quiz.html">Practice quizzes</a></details>
 <div class="nav-section">Mid exam (18 Oct)</div>
-<details class="group" ><summary><span>Mid prep</span></summary><div class="kids"><a href="mid-guide.html" class="">Mid guide & formula sheet</a><a href="mid-mock-1.html" class="">Mock Mid 1</a><a href="mid-mock-2.html" class="">Mock Mid 2</a><a href="mid-mock-3.html" class="">Mock Mid 3</a></div></details>
+<details class="grp"><summary>Mid prep</summary><a href="mid-guide.html">Mid guide & formula sheet</a><a href="mid-mock-1.html">Mock Mid 1</a><a href="mid-mock-2.html">Mock Mid 2</a><a href="mid-mock-3.html">Mock Mid 3</a></details>
 <div class="nav-section">Archive</div>
-<a href="quizzes-2026.html" class="">Real quizzes 2026 (solved)</a>
-<a href="resources.html" class="">PDFs, problem sets & past papers</a></nav>
+<a href="quizzes-2026.html">Real quizzes 2026 (solved)</a>
+<a href="resources.html">PDFs, problem sets & past papers</a></nav>
+  <div class="toc"><div class="toc-title">On this page</div><a href="#1-course-logistics" class="">1. Course logistics</a><a href="#2-why-mathematics-for-ai" class="">2. Why mathematics for AI?</a><a href="#3-ai-overview" class="">3. AI overview</a><a href="#applications-slides-20-32" class="h3">Applications (slides 20–32)</a><a href="#city-at-lums-centre-for-urban-informatics-technology-and-policy" class="h3">CITY at LUMS (Centre for Urban Informatics, Technology and Policy)</a><a href="#4-machine-learning" class="">4. Machine learning</a><a href="#nature-of-ml-problems" class="h3">Nature of ML problems</a><a href="#5-supervised-learning-nomenclature" class="">5. Supervised-learning nomenclature</a></div>
 </aside>
-<main class="content">
-  <article>
-    <div class="crumb">L00 · Course Overview & ML</div>
-    
-    <h1>L00 · Course Overview, AI Overview and Introduction to Machine Learning</h1>
+<main>
+  <div class="crumb">L00 · Course Overview & ML</div>
+  
+  <h1>L00 · Course Overview, AI Overview and Introduction to Machine Learning</h1>
 <p>Introduction lecture (slides &quot;AI-501 Mathematics for AI – Overview&quot;, 66 pages)</p>
 <div class="pdf-links">
 <a href="pdfs/lectures/L00-Introduction.pdf">Introduction slides (PDF)</a>
@@ -38,8 +50,10 @@
 </div>
 
 <p><strong>What this lecture covers:</strong> course logistics and policies → why AI needs mathematics → what intelligence and AI are, history (Turing test, McCarthy 1956, Deep Blue 1997, deep learning 2012) → applications of AI by sector → the CITY centre at LUMS (urban AI case studies) → what machine learning is (traditional programming vs ML; algorithm vs model) → types of ML problems (supervised: regression and classification; unsupervised; semi-supervised) → training-data collection, example systems, typical ML flow → supervised-learning nomenclature.</p>
-<nav class="toc"><div class="toc-title">On this page</div><ol><li><a href="#1-course-logistics">1. Course logistics</a></li><li><a href="#2-why-mathematics-for-ai">2. Why mathematics for AI?</a></li><li><a href="#3-ai-overview">3. AI overview</a></li><li><a href="#4-machine-learning">4. Machine learning</a></li><li><a href="#5-supervised-learning-nomenclature">5. Supervised-learning nomenclature</a></li></ol></nav><h2 id="1-course-logistics"><a class="anchor" href="#1-course-logistics">#</a>1. Course logistics</h2>
-<table>
+<h2 id="1-course-logistics"><a class="anchor" href="#1-course-logistics" aria-hidden="true">#</a>1. Course logistics</h2>
+
+<div class="figs"><figure><a href="assets/fig/l00-p13.jpg" class="zoom"><img src="assets/fig/l00-p13.jpg" alt="Suggested reference books" loading="lazy" decoding="async"></a><figcaption>Slide L00 · p13 — Suggested reference books</figcaption></figure></div>
+<div class="tbl"><table>
 <thead>
 <tr>
 <th>Item</th>
@@ -74,7 +88,7 @@
 <td>Books</td>
 <td><strong>Primary</strong>: Deisenroth, Faisal, Ong — <em>Mathematics for Machine Learning</em>. References: Sayed — <em>Inference and Learning from Data</em>; Boyd &amp; Vandenberghe — <em>Introduction to Applied Linear Algebra</em>; a probability &amp; random processes text. Lecture notes/slides shared.</td>
 </tr>
-</tbody></table>
+</tbody></table></div>
 <p>Is the course right for you? Graduate students aiming at a professional AI career, PhD study in AI/DL/ML, fundamental AI research, or applying AI in research. Prerequisite: revise linear algebra and probability.</p>
 <p><strong>Course objectives</strong> — <em>Foundational knowledge</em> (linear algebra, calculus, probability, optimisation for ML/AI); <em>Practical applications</em> (data processing, model training, performance evaluation); <em>Analytical thinking</em> (critically assess algorithms and their suitability, theory and practice).</p>
 <blockquote>
@@ -83,9 +97,11 @@
 
 <div class="callout remember"><div class="callout-title">Remember</div><p>Quizzes 25% (two dropped, no make-ups), mid 30% and final 40% each with a viva — so you must be able to explain derivations aloud.</p>
 </div>
-<h2 id="2-why-mathematics-for-ai"><a class="anchor" href="#2-why-mathematics-for-ai">#</a>2. Why mathematics for AI?</h2>
+<h2 id="2-why-mathematics-for-ai"><a class="anchor" href="#2-why-mathematics-for-ai" aria-hidden="true">#</a>2. Why mathematics for AI?</h2>
+
+<div class="figs"><figure><a href="assets/fig/l00-p04.jpg" class="zoom"><img src="assets/fig/l00-p04.jpg" alt="AI, ML, DL, data science and big data" loading="lazy" decoding="async"></a><figcaption>Slide L00 · p4 — AI, ML, DL, data science and big data</figcaption></figure><figure><a href="assets/fig/l00-p05.jpg" class="zoom"><img src="assets/fig/l00-p05.jpg" alt="Data → analysis → model → learning, and the maths behind each" loading="lazy" decoding="async"></a><figcaption>Slide L00 · p5 — Data → analysis → model → learning, and the maths behind each</figcaption></figure></div>
 <p>&quot;Is it possible to learn artificial intelligence without mathematical knowledge?&quot; The slide&#39;s map: <strong>AI ⊃ Machine Learning ⊃ Deep Learning</strong>, overlapping <strong>Data Science</strong> and <strong>Big Data</strong>.</p>
-<table>
+<div class="tbl"><table>
 <thead>
 <tr>
 <th>ML stage</th>
@@ -113,17 +129,19 @@
 <td>optimise the model with respect to data</td>
 <td><strong>Probability theory</strong></td>
 </tr>
-</tbody></table>
+</tbody></table></div>
 <p>(Every block of the course ends in an ML method the maths makes possible.)</p>
-<h2 id="3-ai-overview"><a class="anchor" href="#3-ai-overview">#</a>3. AI overview</h2>
+<h2 id="3-ai-overview"><a class="anchor" href="#3-ai-overview" aria-hidden="true">#</a>3. AI overview</h2>
+
+<div class="figs"><figure><a href="assets/fig/l00-p17.jpg" class="zoom"><img src="assets/fig/l00-p17.jpg" alt="What is AI? Narrow vs general AI" loading="lazy" decoding="async"></a><figcaption>Slide L00 · p17 — What is AI? Narrow vs general AI</figcaption></figure><figure><a href="assets/fig/l00-p18.jpg" class="zoom"><img src="assets/fig/l00-p18.jpg" alt="The Turing test (1950)" loading="lazy" decoding="async"></a><figcaption>Slide L00 · p18 — The Turing test (1950)</figcaption></figure></div>
 <ul>
 <li><strong>Intelligence</strong>: &quot;the ability to learn, understand, and apply knowledge to adapt to new situations, reason, and solve problems.&quot; Human intelligence: problem-solving and reasoning, learning from experience, adaptability, emotional intelligence.</li>
 <li><strong>Artificial intelligence</strong>: &quot;the simulation of human intelligence in machines that are programmed to think and learn like humans.&quot; Narrow AI vs general AI; superintelligence. The term <strong>AI was coined in 1956 by John McCarthy</strong> at a conference.</li>
 <li><strong>Turing (1950), &quot;Computing machinery and intelligence&quot;</strong>: can machines think? The <strong>Turing test</strong> (imitation game): an interrogator C questions a computer A and a human B; Turing predicted that by 2000 a machine would have a 30% chance of fooling a person for 5 minutes.</li>
 <li><strong>1960s–1990s</strong>: initial optimism gave way to a more realistic perspective; focus areas: machine learning, multi-agent systems, computer vision, planning, game theory, optimisation. Milestones: <strong>1997 IBM Deep Blue</strong>, <strong>2012 deep-learning breakthrough</strong>.</li>
 </ul>
-<h3 id="applications-slides-20-32"><a class="anchor" href="#applications-slides-20-32">#</a>Applications (slides 20–32)</h3>
-<table>
+<h3 id="applications-slides-20-32"><a class="anchor" href="#applications-slides-20-32" aria-hidden="true">#</a>Applications (slides 20–32)</h3>
+<div class="tbl"><table>
 <thead>
 <tr>
 <th>Sector</th>
@@ -166,10 +184,14 @@
 <td>Urban development</td>
 <td>traffic management, smart grids, road safety, waste management, smart buildings, environmental monitoring</td>
 </tr>
-</tbody></table>
-<h3 id="city-at-lums-centre-for-urban-informatics-technology-and-policy"><a class="anchor" href="#city-at-lums-centre-for-urban-informatics-technology-and-policy">#</a>CITY at LUMS (Centre for Urban Informatics, Technology and Policy)</h3>
+</tbody></table></div>
+<h3 id="city-at-lums-centre-for-urban-informatics-technology-and-policy"><a class="anchor" href="#city-at-lums-centre-for-urban-informatics-technology-and-policy" aria-hidden="true">#</a>CITY at LUMS (Centre for Urban Informatics, Technology and Policy)</h3>
+
+<div class="figs"><figure><a href="assets/fig/l00-p34.jpg" class="zoom"><img src="assets/fig/l00-p34.jpg" alt="Global temperature anomaly model" loading="lazy" decoding="async"></a><figcaption>Slide L00 · p34 — Global temperature anomaly model</figcaption></figure><figure><a href="assets/fig/l00-p36.jpg" class="zoom"><img src="assets/fig/l00-p36.jpg" alt="The grand challenge for cities" loading="lazy" decoding="async"></a><figcaption>Slide L00 · p36 — The grand challenge for cities</figcaption></figure><figure><a href="assets/fig/l00-p37.jpg" class="zoom"><img src="assets/fig/l00-p37.jpg" alt="CITY at LUMS" loading="lazy" decoding="async"></a><figcaption>Slide L00 · p37 — CITY at LUMS</figcaption></figure><figure><a href="assets/fig/l00-p38.jpg" class="zoom"><img src="assets/fig/l00-p38.jpg" alt="Road network from map layers + ML" loading="lazy" decoding="async"></a><figcaption>Slide L00 · p38 — Road network from map layers + ML</figcaption></figure><figure><a href="assets/fig/l00-p39.jpg" class="zoom"><img src="assets/fig/l00-p39.jpg" alt="Road-network analysis of Lahore" loading="lazy" decoding="async"></a><figcaption>Slide L00 · p39 — Road-network analysis of Lahore</figcaption></figure><figure><a href="assets/fig/l00-p40.jpg" class="zoom"><img src="assets/fig/l00-p40.jpg" alt="OSM vs extracted road network" loading="lazy" decoding="async"></a><figcaption>Slide L00 · p40 — OSM vs extracted road network</figcaption></figure><figure><a href="assets/fig/l00-p41.jpg" class="zoom"><img src="assets/fig/l00-p41.jpg" alt="Real-time traffic informatics pipeline" loading="lazy" decoding="async"></a><figcaption>Slide L00 · p41 — Real-time traffic informatics pipeline</figcaption></figure><figure><a href="assets/fig/l00-p42.jpg" class="zoom"><img src="assets/fig/l00-p42.jpg" alt="Traffic-density prototype" loading="lazy" decoding="async"></a><figcaption>Slide L00 · p42 — Traffic-density prototype</figcaption></figure><figure><a href="assets/fig/l00-p43.jpg" class="zoom"><img src="assets/fig/l00-p43.jpg" alt="Land-surface temperature, 1998–2021" loading="lazy" decoding="async"></a><figcaption>Slide L00 · p43 — Land-surface temperature, 1998–2021</figcaption></figure><figure><a href="assets/fig/l00-p44.jpg" class="zoom"><img src="assets/fig/l00-p44.jpg" alt="Urban tree-cover estimation: the problem" loading="lazy" decoding="async"></a><figcaption>Slide L00 · p44 — Urban tree-cover estimation: the problem</figcaption></figure><figure><a href="assets/fig/l00-p45.jpg" class="zoom"><img src="assets/fig/l00-p45.jpg" alt="Sentinel-2 tree-cover pipeline" loading="lazy" decoding="async"></a><figcaption>Slide L00 · p45 — Sentinel-2 tree-cover pipeline</figcaption></figure><figure><a href="assets/fig/l00-p46.jpg" class="zoom"><img src="assets/fig/l00-p46.jpg" alt="Tree-cover results" loading="lazy" decoding="async"></a><figcaption>Slide L00 · p46 — Tree-cover results</figcaption></figure><figure><a href="assets/fig/l00-p47.jpg" class="zoom"><img src="assets/fig/l00-p47.jpg" alt="CITY in action: four snapshots" loading="lazy" decoding="async"></a><figcaption>Slide L00 · p47 — CITY in action: four snapshots</figcaption></figure><figure><a href="assets/fig/l00-p48.jpg" class="zoom"><img src="assets/fig/l00-p48.jpg" alt="The complexity of physical-world signals" loading="lazy" decoding="async"></a><figcaption>Slide L00 · p48 — The complexity of physical-world signals</figcaption></figure><figure><a href="assets/fig/l00-p49.jpg" class="zoom"><img src="assets/fig/l00-p49.jpg" alt="Why deep learning struggles here" loading="lazy" decoding="async"></a><figcaption>Slide L00 · p49 — Why deep learning struggles here</figcaption></figure></div>
 <p>The grand challenge: rapid urbanisation, resource scarcity and climate change test city resilience (Lahore&#39;s built-up area grew 4.5× 1998–2022; motorcycles 4×, cars 3× 2010–2024; smog). CITY works on research, solutions, outreach and academy, via AI/optimisation/modelling/policy → data generation and analysis → evidence-based decisions → sustainable, inclusive, equitable communities. Case studies: <strong>road-network extraction</strong> for Lahore (Google Earth/Maps, OSM, manual labelling + ML/image processing; QGIS, Python, OpenCV, SciPy); <strong>real-time traffic-flow density</strong> from intersection cameras (counts of cars, motorcycles, rickshaws, buses, trucks); <strong>land-surface temperature</strong> (Landsat 1998/2010/2021: vegetation and water declined, built-up grew, +0.47 °C per year); <strong>urban tree-cover estimation</strong> with Sentinel-2 feature selection (proposed method 99% pixel accuracy, kappa 0.92 vs ESA WorldCover 0.74); emergency response and PM2.5 air-quality forecasting.<br><strong>Lesson</strong>: real signals are complex, non-stationary, spectrally entangled spatio-temporal data; deep learning used as a black box ignores the frequency structure, mixes components and is hard to interpret — <strong>&quot;math-informed AI: decompose first, then learn on the pieces.&quot;</strong></p>
-<h2 id="4-machine-learning"><a class="anchor" href="#4-machine-learning">#</a>4. Machine learning</h2>
+<h2 id="4-machine-learning"><a class="anchor" href="#4-machine-learning" aria-hidden="true">#</a>4. Machine learning</h2>
+
+<div class="figs"><figure><a href="assets/fig/l00-p51.jpg" class="zoom"><img src="assets/fig/l00-p51.jpg" alt="Traditional programming vs machine learning" loading="lazy" decoding="async"></a><figcaption>Slide L00 · p51 — Traditional programming vs machine learning</figcaption></figure><figure><a href="assets/fig/l00-p52.jpg" class="zoom"><img src="assets/fig/l00-p52.jpg" alt="Recognising hand-written 2s" loading="lazy" decoding="async"></a><figcaption>Slide L00 · p52 — Recognising hand-written 2s</figcaption></figure><figure><a href="assets/fig/l00-p53.jpg" class="zoom"><img src="assets/fig/l00-p53.jpg" alt="Data → algorithm → model" loading="lazy" decoding="async"></a><figcaption>Slide L00 · p53 — Data → algorithm → model</figcaption></figure><figure><a href="assets/fig/l00-p55.jpg" class="zoom"><img src="assets/fig/l00-p55.jpg" alt="Supervised learning" loading="lazy" decoding="async"></a><figcaption>Slide L00 · p55 — Supervised learning</figcaption></figure></div>
 <p><strong>What is ML?</strong> Automating the process of automation; getting computers to program themselves.</p>
 <p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><munder><munder><mrow><mtext>Data</mtext><mo>+</mo><mtext>Program</mtext><mo>→</mo><mtext>Computer</mtext><mo>→</mo><mtext>Output</mtext></mrow><mo stretchy="true">⏟</mo></munder><mtext>traditional programming</mtext></munder><mspace width="2em"/><mtext>vs</mtext><mspace width="2em"/><munder><munder><mrow><mtext>Data</mtext><mo>+</mo><mtext>Output</mtext><mo>→</mo><mtext>Computer</mtext><mo>→</mo><mtext>Program</mtext></mrow><mo stretchy="true">⏟</mo></munder><mtext>machine learning</mtext></munder></mrow><annotation encoding="application/x-tex">\underbrace{\text{Data}+\text{Program}\to\text{Computer}\to\text{Output}}_{\text{traditional programming}}\qquad\text{vs}\qquad\underbrace{\text{Data}+\text{Output}\to\text{Computer}\to\text{Program}}_{\text{machine learning}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.348em;vertical-align:-1.6647em;"></span><span class="mord munder"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6833em;"><span style="top:-1.4715em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">traditional programming</span></span></span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord munder"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6833em;"><span class="svg-align" style="top:-2.1576em;"><span class="pstrut" style="height:3em;"></span><span class="stretchy" style="height:0.548em;min-width:1.6em;"><span class="brace-left" style="height:0.548em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="0.548em" viewBox="0 0 400000 548" preserveAspectRatio="xMinYMin slice"><path d="M0 6l6-6h17c12.688 0 19.313.3 20 1 4 4 7.313 8.3 10 13
  35.313 51.3 80.813 93.8 136.5 127.5 55.688 33.7 117.188 55.8 184.5 66.5.688
@@ -197,7 +219,9 @@ c100.7 8.3 195.3 44 280 108 55.3 42 101.7 93 139 153l9 14c2.7-4 5.7-8.7 9-14
 <li>Decision tree <strong>algorithm</strong> produces a model = a <strong>tree of if-then statements</strong> with specific values.</li>
 <li>Neural network + backpropagation + gradient descent produce a model = a <strong>trained (weights assigned) network</strong>.</li>
 </ul>
-<h3 id="nature-of-ml-problems"><a class="anchor" href="#nature-of-ml-problems">#</a>Nature of ML problems</h3>
+<h3 id="nature-of-ml-problems"><a class="anchor" href="#nature-of-ml-problems" aria-hidden="true">#</a>Nature of ML problems</h3>
+
+<div class="figs"><figure><a href="assets/fig/l00-p56.jpg" class="zoom"><img src="assets/fig/l00-p56.jpg" alt="Regression examples" loading="lazy" decoding="async"></a><figcaption>Slide L00 · p56 — Regression examples</figcaption></figure><figure><a href="assets/fig/l00-p57.jpg" class="zoom"><img src="assets/fig/l00-p57.jpg" alt="Classification examples" loading="lazy" decoding="async"></a><figcaption>Slide L00 · p57 — Classification examples</figcaption></figure><figure><a href="assets/fig/l00-p58.jpg" class="zoom"><img src="assets/fig/l00-p58.jpg" alt="Unsupervised learning (clustering)" loading="lazy" decoding="async"></a><figcaption>Slide L00 · p58 — Unsupervised learning (clustering)</figcaption></figure><figure><a href="assets/fig/l00-p59.jpg" class="zoom"><img src="assets/fig/l00-p59.jpg" alt="Semi-supervised learning" loading="lazy" decoding="async"></a><figcaption>Slide L00 · p59 — Semi-supervised learning</figcaption></figure><figure><a href="assets/fig/l00-p60.jpg" class="zoom"><img src="assets/fig/l00-p60.jpg" alt="Training-data collection" loading="lazy" decoding="async"></a><figcaption>Slide L00 · p60 — Training-data collection</figcaption></figure><figure><a href="assets/fig/l00-p61.jpg" class="zoom"><img src="assets/fig/l00-p61.jpg" alt="Example systems I" loading="lazy" decoding="async"></a><figcaption>Slide L00 · p61 — Example systems I</figcaption></figure><figure><a href="assets/fig/l00-p62.jpg" class="zoom"><img src="assets/fig/l00-p62.jpg" alt="Example systems II" loading="lazy" decoding="async"></a><figcaption>Slide L00 · p62 — Example systems II</figcaption></figure><figure><a href="assets/fig/l00-p63.jpg" class="zoom"><img src="assets/fig/l00-p63.jpg" alt="Typical ML flow" loading="lazy" decoding="async"></a><figcaption>Slide L00 · p63 — Typical ML flow</figcaption></figure></div>
 <ol>
 <li><strong>Supervised learning</strong> — the algorithm receives inputs <strong>with the correct outputs</strong> (all labelled data) → model → prediction.<ul>
 <li><strong>Regression</strong>: quantitative prediction on a <strong>continuous</strong> scale (age from a photo; price of a 10-marla 5-bedroom house in 2050; USD/PKR rate in a year; vaccine efficacy; average monsoon rainfall; cumulative AI501 score; probability of an electricity price decrease; steps per day). <em>Common thread: continuous outputs.</em></li>
@@ -213,7 +237,9 @@ c100.7 8.3 195.3 44 280 108 55.3 42 101.7 93 139 153l9 14c2.7-4 5.7-8.7 9-14
 
 <div class="callout remember"><div class="callout-title">Remember</div><p>ML learns the program from data + outputs; supervised = labelled (regression if continuous, classification if categorical), unsupervised = unlabelled (clustering), semi-supervised = both.</p>
 </div>
-<h2 id="5-supervised-learning-nomenclature"><a class="anchor" href="#5-supervised-learning-nomenclature">#</a>5. Supervised-learning nomenclature</h2>
+<h2 id="5-supervised-learning-nomenclature"><a class="anchor" href="#5-supervised-learning-nomenclature" aria-hidden="true">#</a>5. Supervised-learning nomenclature</h2>
+
+<div class="figs"><figure><a href="assets/fig/l00-p65.jpg" class="zoom"><img src="assets/fig/l00-p65.jpg" alt="Features, labels, training data: stock-index example" loading="lazy" decoding="async"></a><figcaption>Slide L00 · p65 — Features, labels, training data: stock-index example</figcaption></figure><figure><a href="assets/fig/l00-p66.jpg" class="zoom"><img src="assets/fig/l00-p66.jpg" alt="MNIST example" loading="lazy" decoding="async"></a><figcaption>Slide L00 · p66 — MNIST example</figcaption></figure></div>
 <ul>
 <li><strong>Inputs</strong> → <strong>features</strong>; <strong>output</strong> → <strong>label</strong>.</li>
 <li><strong>Training data</strong>: (input, output) pairs with known output, used to train the model.</li>
@@ -228,10 +254,13 @@ c100.7 8.3 195.3 44 280 108 55.3 42 101.7 93 139 153l9 14c2.7-4 5.7-8.7 9-14
 <div class="callout remember"><div class="callout-title">Remember: The one line for this lecture</div><p>AI rests on four pillars of mathematics — linear algebra, geometry, calculus, probability — and machine learning is learning a model <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">h</span></span></span></span> from (feature, label) data: regression for continuous labels, classification for categories, judged by a loss on data it has not seen.</p>
 </div>
 
-  </article>
-  <footer class="pager">
-    <a class="prev" href="start-here.html"><small>Previous</small>Start here (how to use)</a>
-    <a class="next" href="l00-quiz.html"><small>Next</small>Practice quizzes</a>
-  </footer>
+  <nav class="pagenav">
+    <a class="pv" href="start-here.html">← Previous<b>Start here (how to use)</b></a>
+    <a class="nx" href="l00-quiz.html">Next →<b>L00 · Practice quizzes</b></a>
+  </nav>
+  <div class="foot">AI 501 · Fall 2026 · study notes</div>
 </main>
+</div>
+<div class="lightbox" id="lightbox" hidden><img alt=""><button class="iconbtn lb-close" aria-label="Close">✕</button></div>
+<script src="assets/site.js" defer></script>
 </body></html>

@@ -1,57 +1,72 @@
 <!doctype html>
 <html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Start here (how to use) · AI 501</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#fbfbfa" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#16161a" media="(prefers-color-scheme: dark)">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 <link rel="stylesheet" href="assets/style.css">
 </head><body>
-<button class="menu-btn" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
-<aside class="sidebar">
-  <a class="brand" href="index.html"><strong>AI 501</strong><span>Mathematics for AI · Fall 2026</span></a>
-  <nav class="nav"><a href="index.html" class="">Home</a>
-<a href="start-here.html" class="active">Start here (how to use)</a>
+<header class="topbar">
+  <button class="iconbtn" id="menuBtn" aria-label="Open contents" aria-expanded="false"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  <a class="topbrand" href="index.html">AI 501<span>Start here (how to use)</span></a>
+  <button class="iconbtn themebtn" aria-label="Toggle dark mode"><svg class="i-moon" viewBox="0 0 24 24" width="19" height="19"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="currentColor"/></svg><svg class="i-sun" viewBox="0 0 24 24" width="19" height="19"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></g></svg></button>
+</header>
+<div class="scrim" id="scrim"></div>
+<div class="wrap">
+<aside class="side" id="side">
+  <div class="side-head">
+    <a class="brand" href="index.html">AI 501 — Mathematics for AI<span>Mathematics for AI · Fall 2026</span></a>
+    <button class="iconbtn themebtn" aria-label="Toggle dark mode"><svg class="i-moon" viewBox="0 0 24 24" width="17" height="17"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="currentColor"/></svg><svg class="i-sun" viewBox="0 0 24 24" width="17" height="17"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></g></svg></button>
+  </div>
+  <nav><a href="index.html">Home</a>
+<a href="start-here.html" class="on" aria-current="page">Start here (how to use)</a>
 <div class="nav-section">Lectures</div>
-<details class="group" ><summary><span>L00 · Course Overview & ML</span></summary><div class="kids"><a href="l00-notes.html" class="">Notes</a><a href="l00-quiz.html" class="">Practice quizzes</a></div></details>
-<details class="group" ><summary><span>L01 · Vectors</span></summary><div class="kids"><a href="l01-notes.html" class="">Notes</a><a href="l01-quiz.html" class="">Practice quizzes</a></div></details>
-<details class="group" ><summary><span>L02 · Matrices & Linear Systems</span></summary><div class="kids"><a href="l02-notes.html" class="">Notes</a><a href="l02-quiz.html" class="">Practice quizzes</a></div></details>
-<details class="group" ><summary><span>L03 · Rank, Column & Null Space</span></summary><div class="kids"><a href="l03-notes.html" class="">Notes</a><a href="l03-quiz.html" class="">Practice quizzes</a></div></details>
-<details class="group" ><summary><span>L04 · Supervised Learning & kNN</span></summary><div class="kids"><a href="l04-notes.html" class="">Notes</a><a href="l04-quiz.html" class="">Practice quizzes</a></div></details>
-<details class="group" ><summary><span>L05 · Regression & Regularization</span></summary><div class="kids"><a href="l05-notes.html" class="">Notes</a><a href="l05-quiz.html" class="">Practice quizzes</a></div></details>
-<details class="group" ><summary><span>L06 · Eigenvalue Decomposition</span></summary><div class="kids"><a href="l06-notes.html" class="">Notes</a><a href="l06-quiz.html" class="">Practice quizzes</a></div></details>
+<details class="grp"><summary>L00 · Course Overview & ML</summary><a href="l00-notes.html">Notes</a><a href="l00-quiz.html">Practice quizzes</a></details>
+<details class="grp"><summary>L01 · Vectors</summary><a href="l01-notes.html">Notes</a><a href="l01-quiz.html">Practice quizzes</a></details>
+<details class="grp"><summary>L02 · Matrices & Linear Systems</summary><a href="l02-notes.html">Notes</a><a href="l02-quiz.html">Practice quizzes</a></details>
+<details class="grp"><summary>L03 · Rank, Column & Null Space</summary><a href="l03-notes.html">Notes</a><a href="l03-quiz.html">Practice quizzes</a></details>
+<details class="grp"><summary>L04 · Supervised Learning & kNN</summary><a href="l04-notes.html">Notes</a><a href="l04-quiz.html">Practice quizzes</a></details>
+<details class="grp"><summary>L05 · Regression & Regularization</summary><a href="l05-notes.html">Notes</a><a href="l05-quiz.html">Practice quizzes</a></details>
+<details class="grp"><summary>L06 · Eigenvalue Decomposition</summary><a href="l06-notes.html">Notes</a><a href="l06-quiz.html">Practice quizzes</a></details>
 <div class="nav-section">Mid exam (18 Oct)</div>
-<details class="group" ><summary><span>Mid prep</span></summary><div class="kids"><a href="mid-guide.html" class="">Mid guide & formula sheet</a><a href="mid-mock-1.html" class="">Mock Mid 1</a><a href="mid-mock-2.html" class="">Mock Mid 2</a><a href="mid-mock-3.html" class="">Mock Mid 3</a></div></details>
+<details class="grp"><summary>Mid prep</summary><a href="mid-guide.html">Mid guide & formula sheet</a><a href="mid-mock-1.html">Mock Mid 1</a><a href="mid-mock-2.html">Mock Mid 2</a><a href="mid-mock-3.html">Mock Mid 3</a></details>
 <div class="nav-section">Archive</div>
-<a href="quizzes-2026.html" class="">Real quizzes 2026 (solved)</a>
-<a href="resources.html" class="">PDFs, problem sets & past papers</a></nav>
+<a href="quizzes-2026.html">Real quizzes 2026 (solved)</a>
+<a href="resources.html">PDFs, problem sets & past papers</a></nav>
+  <div class="toc"><div class="toc-title">On this page</div><a href="#if-the-mid-is-in-a-few-days" class="">If the mid is in a few days</a><a href="#how-the-pages-are-built" class="">How the pages are built</a><a href="#sources-used" class="">Sources used</a></div>
 </aside>
-<main class="content">
-  <article>
-    
-    
-    <h1>Start here</h1>
+<main>
+  
+  
+  <h1>Start here</h1>
 <p>How to use this site in the four days before the mid, and after it.</p>
-<nav class="toc"><div class="toc-title">On this page</div><ol><li><a href="#if-the-mid-is-in-a-few-days">If the mid is in a few days</a></li><li><a href="#how-the-pages-are-built">How the pages are built</a></li><li><a href="#sources-used">Sources used</a></li></ol></nav><h2 id="if-the-mid-is-in-a-few-days"><a class="anchor" href="#if-the-mid-is-in-a-few-days">#</a>If the mid is in a few days</h2>
+<h2 id="if-the-mid-is-in-a-few-days"><a class="anchor" href="#if-the-mid-is-in-a-few-days" aria-hidden="true">#</a>If the mid is in a few days</h2>
 <ol>
 <li><strong>Day 1–2 — notes, one lecture per sitting.</strong> Read a lecture&#39;s notes with the slides PDF open beside it. At every ★ Remember line, cover the page and say the line aloud (the vivas reward explaining, not just computing). Then do one mock quiz for that lecture under a 20-minute timer.</li>
 <li><strong>Day 3 — Mock Mid 1 and Mock Mid 2</strong> in exam conditions (45 + 100 minutes). Mark them strictly with the −1 rule for wrong ticks. Re-read the notes sections for every question you lost marks on.</li>
 <li><strong>Day 4 — the real 2024 and 2025 papers</strong> (links on the <a href="mid-guide.html">mid guide</a>), then Mock Mid 3, then the formula sheet one last time.</li>
 </ol>
-<h2 id="how-the-pages-are-built"><a class="anchor" href="#how-the-pages-are-built">#</a>How the pages are built</h2>
+<h2 id="how-the-pages-are-built"><a class="anchor" href="#how-the-pages-are-built" aria-hidden="true">#</a>How the pages are built</h2>
 <ul>
 <li><strong>Notes</strong> follow the order of the lecture slides. Coloured boxes: blue = definition, purple = theorem/derivation, green = worked example, red = common trap, yellow = how it was examined / where it is used in AI, and the rust-coloured <strong>★ Remember</strong> box closes every section.</li>
 <li><strong>Practice quizzes</strong> are new questions written in the pattern of the quizzes actually set in 2026 (and in 2025). Solutions and marking are hidden under each question — try first.</li>
 <li><strong>Mock mids</strong> copy the mid format exactly: Part I select-all MCQs with negative marking, Part II problems.</li>
 <li>All working for linear algebra is written as matrices and column vectors.</li>
 </ul>
-<h2 id="sources-used"><a class="anchor" href="#sources-used">#</a>Sources used</h2>
+<h2 id="sources-used"><a class="anchor" href="#sources-used" aria-hidden="true">#</a>Sources used</h2>
 <p>The 2026 lecture slides (L00–L06), the 2026 revision notes, Problem Sets 1–6 with solutions, Tutorial Worksheets 1–3, the five 2026 quizzes, and from the previous offering: the 2024 and 2025 mid papers, the 2025 quizzes 1–6, homeworks and tutorials. Every PDF is on the <a href="resources.html">resources page</a>.</p>
 
-  </article>
-  <footer class="pager">
-    <a class="prev" href="index.html"><small>Previous</small>Home</a>
-    <a class="next" href="l00-notes.html"><small>Next</small>Notes</a>
-  </footer>
+  <nav class="pagenav">
+    <a class="pv" href="index.html">← Previous<b>Home</b></a>
+    <a class="nx" href="l00-notes.html">Next →<b>L00 · Notes</b></a>
+  </nav>
+  <div class="foot">AI 501 · Fall 2026 · study notes</div>
 </main>
+</div>
+<div class="lightbox" id="lightbox" hidden><img alt=""><button class="iconbtn lb-close" aria-label="Close">✕</button></div>
+<script src="assets/site.js" defer></script>
 </body></html>
