@@ -91,6 +91,11 @@ function renderBlocks(src, store) {
       const lab = { solution: 'Solution & marking', answer: 'Answer', hint: 'Hint' }[c.type];
       return `<details class="solution ${c.type}"><summary>${title || lab}</summary><div class="sol-body">${inner}</div></details>`;
     }
+    if (c.type === 'figs') {
+      const items = c.children.map(x => x.md || '').join('\n').split('\n').map(l => l.trim()).filter(Boolean);
+      return `<div class="figs">${items.map(l => { const [f, cap] = l.split('|');
+        return `<figure><a href="assets/fig/${f}.jpg" class="zoom"><img src="assets/fig/${f}.jpg" alt="${cap || ''}" loading="lazy" decoding="async"></a><figcaption>Slide ${f.replace(/^l(\d+)-p0?/, 'L$1 · p')} — ${cap || ''}</figcaption></figure>`; }).join('')}</div>`;
+    }
     if (c.type === 'question') {
       return `<section class="question"><div class="q-head">${title}</div>${inner}</section>`;
     }
@@ -112,63 +117,85 @@ function mdToHtml(src) {
     const id = slugify(inner.replace(/<span class="katex[\s\S]*?<\/span>\s*<\/span>\s*<\/span>/g, '')) || 'sec';
     let uid = id, k = 2; while (toc.find(t => t.id === uid)) uid = id + '-' + k++;
     toc.push({ lvl: +lvl, id: uid, text: inner });
-    return `<h${lvl} id="${uid}"><a class="anchor" href="#${uid}">#</a>${inner}</h${lvl}>`;
+    return `<h${lvl} id="${uid}"><a class="anchor" href="#${uid}" aria-hidden="true">#</a>${inner}</h${lvl}>`;
   });
+  html = html.replace(/<table>/g, '<div class="tbl"><table>').replace(/<\/table>/g, '</table></div>');
   return { html, toc };
 }
 
 // ---------------------------------------------------------------- template
 function navHtml(current) {
   const item = it => {
-    if (it.children) {
-      const open = it.children.some(c => c.id === current.id) || it.id === current.id;
-      const head = it.file ? `<a href="${it.id}.html" class="${it.id === current.id ? 'active' : ''}">${it.title}</a>` : `<span>${it.title}</span>`;
-      return `<details class="group" ${open ? 'open' : ''}><summary>${head}</summary><div class="kids">${it.children.map(item).join('')}</div></details>`;
-    }
     if (it.section) return `<div class="nav-section">${it.section}</div>`;
-    return `<a href="${it.id}.html" class="${it.id === current.id ? 'active' : ''}">${it.title}</a>`;
+    if (it.children) {
+      const open = it.children.some(c => c.id === current.id);
+      return `<details class="grp"${open ? ' open' : ''}><summary>${it.title}</summary>${it.children.map(c =>
+        `<a href="${c.id}.html"${c.id === current.id ? ' class="on" aria-current="page"' : ''}>${c.title}</a>`).join('')}</details>`;
+    }
+    return `<a href="${it.id}.html"${it.id === current.id ? ' class="on" aria-current="page"' : ''}>${it.title}</a>`;
   };
   return site.nav.map(item).join('\n');
 }
 
+const plain = s => s.replace(/<[^>]+>/g, '');
+const THEME_BOOT = `(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}})();`;
+
 function page(p, body, toc) {
   const idx = pages.findIndex(x => x.id === p.id);
   const prev = pages[idx - 1], next = pages[idx + 1];
-  const tocHtml = p.toc !== false && toc.filter(t => t.lvl === 2).length > 2
-    ? `<nav class="toc"><div class="toc-title">On this page</div><ol>${toc.filter(t => t.lvl === 2).map(t => `<li><a href="#${t.id}">${t.text}</a></li>`).join('')}</ol></nav>` : '';
-  const isQuiz = /quiz|mid|mock/i.test(p.id);
+  const h2 = toc.filter(t => t.lvl === 2);
+  const tocHtml = h2.length > 1
+    ? `<div class="toc"><div class="toc-title">On this page</div>${toc.map(t => `<a href="#${t.id}" class="${t.lvl === 3 ? 'h3' : ''}">${t.text}</a>`).join('')}</div>` : '';
+  const isQuiz = /quiz|mid-mock/i.test(p.id);
+  const crumb = p.parent && p.parent.title ? p.parent.title : '';
+  const label = (x) => x.parent && x.parent.title ? `${x.parent.title.split(' · ')[0]} · ${x.title}` : x.title;
   return `<!doctype html>
 <html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${p.title.replace(/<[^>]+>/g, '')} · ${site.short}</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>${plain(crumb ? crumb + ' — ' + p.title : p.title)} · ${site.short}</title>
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#fbfbfa" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#16161a" media="(prefers-color-scheme: dark)">
+<script>${THEME_BOOT}</script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 <link rel="stylesheet" href="assets/style.css">
 </head><body>
-<button class="menu-btn" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
-<aside class="sidebar">
-  <a class="brand" href="index.html"><strong>${site.short}</strong><span>${site.subtitle}</span></a>
-  <nav class="nav">${navHtml(p)}</nav>
+<header class="topbar">
+  <button class="iconbtn" id="menuBtn" aria-label="Open contents" aria-expanded="false"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  <a class="topbrand" href="index.html">${site.short}<span>${plain(crumb || p.title)}</span></a>
+  <button class="iconbtn themebtn" aria-label="Toggle dark mode"><svg class="i-moon" viewBox="0 0 24 24" width="19" height="19"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="currentColor"/></svg><svg class="i-sun" viewBox="0 0 24 24" width="19" height="19"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></g></svg></button>
+</header>
+<div class="scrim" id="scrim"></div>
+<div class="wrap">
+<aside class="side" id="side">
+  <div class="side-head">
+    <a class="brand" href="index.html">${site.short} — Mathematics for AI<span>${site.subtitle}</span></a>
+    <button class="iconbtn themebtn" aria-label="Toggle dark mode"><svg class="i-moon" viewBox="0 0 24 24" width="17" height="17"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="currentColor"/></svg><svg class="i-sun" viewBox="0 0 24 24" width="17" height="17"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></g></svg></button>
+  </div>
+  <nav>${navHtml(p)}</nav>
+  ${tocHtml}
 </aside>
-<main class="content">
-  <article>
-    ${p.parent && p.parent.title ? `<div class="crumb">${p.parent.title}</div>` : ''}
-    ${isQuiz ? `<div class="quiz-tools"><button onclick="document.querySelectorAll('details.solution').forEach(d=>d.open=true)">Show all solutions</button><button onclick="document.querySelectorAll('details.solution').forEach(d=>d.open=false)">Hide all</button><button onclick="window.print()">Print</button></div>` : ''}
-    ${body.includes('<h2') ? body.replace(/<h2/, tocHtml + '<h2') : body}
-  </article>
-  <footer class="pager">
-    ${prev ? `<a class="prev" href="${prev.id}.html"><small>Previous</small>${prev.title}</a>` : '<span></span>'}
-    ${next ? `<a class="next" href="${next.id}.html"><small>Next</small>${next.title}</a>` : '<span></span>'}
-  </footer>
+<main>
+  ${crumb ? `<div class="crumb">${crumb}</div>` : ''}
+  ${isQuiz ? `<div class="quiz-tools"><button data-sol="open">Show all solutions</button><button data-sol="close">Hide all</button><button onclick="window.print()">Print</button></div>` : ''}
+  ${body}
+  <nav class="pagenav">
+    ${prev ? `<a class="pv" href="${prev.id}.html">← Previous<b>${label(prev)}</b></a>` : '<span></span>'}
+    ${next ? `<a class="nx" href="${next.id}.html">Next →<b>${label(next)}</b></a>` : '<span></span>'}
+  </nav>
+  <div class="foot">AI 501 · Fall 2026 · study notes</div>
 </main>
+</div>
+<div class="lightbox" id="lightbox" hidden><img alt=""><button class="iconbtn lb-close" aria-label="Close">✕</button></div>
+<script src="assets/site.js" defer></script>
 </body></html>`;
 }
 
 // ---------------------------------------------------------------- build
 fs.rmSync(OUT, { recursive: true, force: true });
 fs.mkdirSync(path.join(OUT, 'assets'), { recursive: true });
-fs.copyFileSync(path.join(ROOT, 'assets/style.css'), path.join(OUT, 'assets/style.css'));
+fs.cpSync(path.join(ROOT, 'assets'), path.join(OUT, 'assets'), { recursive: true });
 fs.cpSync(path.join(ROOT, 'pdfs'), path.join(OUT, 'pdfs'), { recursive: true });
 fs.writeFileSync(path.join(OUT, '.nojekyll'), '');
 
