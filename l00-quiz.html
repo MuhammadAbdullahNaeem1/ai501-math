@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practice quizzes · AI 501</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<button class="menu-btn" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
+<aside class="sidebar">
+  <a class="brand" href="index.html"><strong>AI 501</strong><span>Mathematics for AI · Fall 2026</span></a>
+  <nav class="nav"><a href="index.html" class="">Home</a>
+<a href="start-here.html" class="">Start here (how to use)</a>
+<div class="nav-section">Lectures</div>
+<details class="group" open><summary><span>L00 · Course Overview & ML</span></summary><div class="kids"><a href="l00-notes.html" class="">Notes</a><a href="l00-quiz.html" class="active">Practice quizzes</a></div></details>
+<details class="group" ><summary><span>L01 · Vectors</span></summary><div class="kids"><a href="l01-notes.html" class="">Notes</a><a href="l01-quiz.html" class="">Practice quizzes</a></div></details>
+<details class="group" ><summary><span>L02 · Matrices & Linear Systems</span></summary><div class="kids"><a href="l02-notes.html" class="">Notes</a><a href="l02-quiz.html" class="">Practice quizzes</a></div></details>
+<details class="group" ><summary><span>L03 · Rank, Column & Null Space</span></summary><div class="kids"><a href="l03-notes.html" class="">Notes</a><a href="l03-quiz.html" class="">Practice quizzes</a></div></details>
+<details class="group" ><summary><span>L04 · Supervised Learning & kNN</span></summary><div class="kids"><a href="l04-notes.html" class="">Notes</a><a href="l04-quiz.html" class="">Practice quizzes</a></div></details>
+<details class="group" ><summary><span>L05 · Regression & Regularization</span></summary><div class="kids"><a href="l05-notes.html" class="">Notes</a><a href="l05-quiz.html" class="">Practice quizzes</a></div></details>
+<details class="group" ><summary><span>L06 · Eigenvalue Decomposition</span></summary><div class="kids"><a href="l06-notes.html" class="">Notes</a><a href="l06-quiz.html" class="">Practice quizzes</a></div></details>
+<div class="nav-section">Mid exam (18 Oct)</div>
+<details class="group" ><summary><span>Mid prep</span></summary><div class="kids"><a href="mid-guide.html" class="">Mid guide & formula sheet</a><a href="mid-mock-1.html" class="">Mock Mid 1</a><a href="mid-mock-2.html" class="">Mock Mid 2</a><a href="mid-mock-3.html" class="">Mock Mid 3</a></div></details>
+<div class="nav-section">Archive</div>
+<a href="quizzes-2026.html" class="">Real quizzes 2026 (solved)</a>
+<a href="resources.html" class="">PDFs, problem sets & past papers</a></nav>
+</aside>
+<main class="content">
+  <article>
+    <div class="crumb">L00 · Course Overview & ML</div>
+    <div class="quiz-tools"><button onclick="document.querySelectorAll('details.solution').forEach(d=>d.open=true)">Show all solutions</button><button onclick="document.querySelectorAll('details.solution').forEach(d=>d.open=false)">Hide all</button><button onclick="window.print()">Print</button></div>
+    <h1>L00 · Practice quiz — Course overview and ML basics</h1>
+<p>One short mock quiz (<strong>10 minutes / 6 marks</strong>) in the style of 2026 Quiz 1 Q1.</p>
+<div class="pdf-links">
+<a href="l00-notes.html">L00 notes</a>
+<a href="pdfs/quizzes/Quiz-1-Solution.pdf">Real Quiz 1 (2026)</a>
+</div>
+
+<section class="question"><div class="q-head">Question 1 (4 marks)</div><p>Tick Regression / Classification / Neither (0.5 each).<br>(i) Predicting tomorrow&#39;s USD/PKR exchange rate.<br>(ii) Predicting whether a transaction is fraudulent.<br>(iii) Predicting the number of steps a person takes tomorrow.<br>(iv) Predicting the probability that a loan will default.<br>(v) Predicting whether a student will take more than 10 000 steps today.<br>(vi) Segmenting customers into groups from transaction data with no labels.<br>(vii) Predicting which of 10 digits is in an image.<br>(viii) Sorting a list of numbers.</p>
+
+<details class="solution solution"><summary>Solution & marking</summary><div class="sol-body"><p>(i) Regression. (ii) Classification. (iii) Regression (a count on a numerical scale). (iv) Regression (a probability in <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[0,1]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span><span class="mclose">]</span></span></span></span>). (v) Classification (yes/no). (vi) Neither — unsupervised clustering. (vii) Classification (10 classes). (viii) Neither — a fixed algorithm, no learning from data.</p>
+</div></details>
+</section>
+
+<section class="question"><div class="q-head">Question 2 (2 marks)</div><p>(a) In one sentence each, distinguish traditional programming from machine learning. (1)<br>(b) What is the difference between an ML <em>algorithm</em> and a <em>model</em>? Give one example. (1)</p>
+
+<details class="solution solution"><summary>Solution & marking</summary><div class="sol-body"><p>(a) Traditional: data + program → output. ML: data + desired outputs → the computer produces the program (model).<br>(b) The algorithm is the procedure we design to learn; the model is what it outputs and uses for prediction — e.g. the linear-regression algorithm outputs a model that is a vector of coefficients.</p>
+</div></details>
+</section>
+
+<div class="callout remember"><div class="callout-title">Remember</div><p>&quot;Probability of X&quot; is regression; &quot;whether X&quot; is classification; no labels means neither (unsupervised).</p>
+</div>
+
+  </article>
+  <footer class="pager">
+    <a class="prev" href="l00-notes.html"><small>Previous</small>Notes</a>
+    <a class="next" href="l01-notes.html"><small>Next</small>Notes</a>
+  </footer>
+</main>
+</body></html>
