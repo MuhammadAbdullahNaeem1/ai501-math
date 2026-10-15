@@ -96,6 +96,11 @@ function renderBlocks(src, store) {
       return `<div class="figs">${items.map(l => { const [f, cap] = l.split('|');
         return `<figure><a href="assets/fig/${f}.jpg" class="zoom"><img src="assets/fig/${f}.jpg" alt="${cap || ''}" loading="lazy" decoding="async"></a><figcaption>Slide ${f.replace(/^l(\d+)-p0?/, 'L$1 · p')} — ${cap || ''}</figcaption></figure>`; }).join('')}</div>`;
     }
+    if (c.type === 'background' || c.type === 'derive') {
+      const lab = c.type === 'background' ? 'Background you need' : 'Where does this come from?';
+      const icon = c.type === 'background' ? '\u{1F9E9}' : '\u{1F50D}';
+      return `<details class="explain ${c.type}"><summary><span class="ex-icon">${icon}</span><span class="ex-lab">${lab}</span>${title ? `<span class="ex-title">${title}</span>` : ''}</summary><div class="ex-body">${inner}</div></details>`;
+    }
     if (c.type === 'question') {
       return `<section class="question"><div class="q-head">${title}</div>${inner}</section>`;
     }

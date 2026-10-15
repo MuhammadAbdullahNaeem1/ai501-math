@@ -310,3 +310,19 @@ p.step, .sol-body p strong:first-child { font-family: var(--sans); }
 }
 .pdf-links a.jump { border-style: dashed; color: var(--accent); }
 .pdf-links a.jump::before { display: none; }
+
+/* ============ background & derivation expanders ============ */
+details.explain { margin: 1rem 0 1.3rem; border: 1px solid var(--ec); border-radius: 10px; background: var(--eb); --ec: var(--def); --eb: var(--def-bg); }
+details.explain.derive { --ec: var(--thm); --eb: var(--thm-bg); }
+details.explain > summary { list-style: none; cursor: pointer; display: flex; flex-wrap: wrap; align-items: baseline; gap: .15rem .55rem; padding: .7rem 1rem; min-height: 44px; font-family: var(--sans); -webkit-tap-highlight-color: transparent; user-select: none; }
+details.explain > summary::-webkit-details-marker { display: none; }
+details.explain > summary::after { content: "tap to open"; margin-left: auto; font-size: .76rem; color: var(--faint); }
+details.explain[open] > summary::after { content: "tap to close"; }
+details.explain[open] > summary { border-bottom: 1px solid var(--ec); }
+.ex-icon { font-size: 1rem; }
+.ex-lab { font-weight: 700; font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ec); }
+.ex-title { font-size: .92rem; color: var(--ink); font-weight: 550; }
+.ex-body { padding: .9rem 1.15rem .3rem; }
+.ex-body > :first-child { margin-top: 0; }
+.ex-body h4 { margin: 1.2rem 0 .4rem; color: var(--ec); font-size: .95rem; }
+@media (max-width: 1020px) { .ex-body { padding: .8rem .85rem .2rem; } details.explain > summary::after { width: 100%; margin-left: 0; } }

@@ -8,6 +8,15 @@ How to use this site in the four days before the mid, and after it.
 2. **Day 3 — Mock Mid 1 and Mock Mid 2** in exam conditions (45 + 100 minutes). Mark them strictly with the −1 rule for wrong ticks. Re-read the notes sections for every question you lost marks on.
 3. **Day 4 — the real 2024 and 2025 papers** (links on the [mid guide](mid-guide.html)), then Mock Mid 3, then the formula sheet one last time.
 
+## Stuck? Open the blue and purple boxes
+
+Almost every section of the notes starts with a blue **🧩 Background you need** box and ends with one or more purple **🔍 Where does this come from?** boxes. They are closed until you tap them.
+
+- **Background** explains, from zero, the symbols and earlier maths the section uses — Σ, subscripts, transposes, matrix multiplication, determinants, derivatives, quadratic equations — always with a small example in numbers.
+- **Where does this come from?** derives the section's formulas step by step, and checks each one on a tiny example.
+
+If a line in the notes makes no sense, open the background box for that section first, then come back to it.
+
 ## How the pages are built
 
 - **Notes** follow the order of the lecture slides. Coloured boxes: blue = definition, purple = theorem/derivation, green = worked example, red = common trap, yellow = how it was examined / where it is used in AI, and the rust-coloured **★ Remember** box closes every section.
