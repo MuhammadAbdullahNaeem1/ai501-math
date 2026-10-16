@@ -11,7 +11,7 @@ Fall 2026 · LUMS · Dr. Zubair Khalid · study notes, mock quizzes and mock mid
 
 [Mid guide & formula sheet](mid-guide.html) — format decoded from the 2024 and 2025 mids, a topic-by-topic checklist, every formula on one page, and exam strategy for the "−1 per wrong tick" MCQs.
 
-[Mock Mid 1](mid-mock-1.html) · [Mock Mid 2](mid-mock-2.html) · [Mock Mid 3](mid-mock-3.html) — each a full paper: 20 select-all MCQs (45 min) + 8 problems (100 min), with worked solutions under every question.
+[Mock Mid 1](mid-mock-1.html) · [Mock Mid 2](mid-mock-2.html) · [Mock Mid 3](mid-mock-3.html) — full papers in the older format (20 select-all MCQs + 8 problems). **[Mock Mid 4](mid-mock-4.html)** follows the official 2026 format: 30 MCQs × 3 pts (60 min) + 7 problems / 30 pts (120 min). **[Cheat sheet](cheatsheet.html)**: every formula on 4 A4 sides (2 sheets, 2 columns) — copy it by hand for the exam.
 
 ## Lectures so far
 

@@ -222,3 +222,37 @@ for (const p of pages) {
   n++;
 }
 console.log(`built ${n} pages -> _site/`);
+
+// ---------------------------------------------------------------- cheat sheet (print, 2 A4 sheets, 2 columns)
+{
+  const CS_PT = process.env.CS_PT || '9.9';
+  const { html } = mdToHtml(fs.readFileSync(path.join(ROOT, 'content', 'cheatsheet.md'), 'utf8'));
+  const body = html.replace(/<h1[^>]*>[\s\S]*?<\/h1>/, '');
+  fs.writeFileSync(path.join(OUT, 'cheatsheet-print.html'), `<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI 501 Mid Cheat Sheet</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<style>
+@page { size: A4; margin: 6mm 6.5mm; }
+* { box-sizing: border-box; }
+html, body { margin: 0; background: #fff; color: #111; }
+body { font: ${CS_PT}pt/1.22 "Segoe UI", Calibri, Arial, sans-serif; }
+.hd { display: flex; justify-content: space-between; border-bottom: 1.2px solid #1d4ed8; margin-bottom: 1.5pt; font-size: 1.05em; }
+.hd b { color: #1d4ed8; }
+.cols { column-count: 2; column-gap: 4mm; column-rule: .5pt solid #bbb; column-fill: auto; height: auto; }
+h2 { font-size: 1.12em; margin: 2.2pt 0 .8pt; padding: .6pt 3pt; background: #1d4ed8; color: #fff; border-radius: 2pt; break-after: avoid; }
+ul { margin: 0; padding-left: 8pt; }
+li { margin: 0 0 .5pt; }
+li::marker { color: #1d4ed8; }
+p { margin: 0 0 1pt; }
+strong { color: #9a1b1b; }
+.katex { font-size: 1.04em; }
+.anchor { display: none; }
+.katex-display { margin: 1pt 0; }
+@media screen { body { max-width: 210mm; margin: 0 auto; padding: 6mm; } }
+</style></head><body>
+<div class="hd"><span><b>AI 501 · Mathematics for AI</b> — Mid cheat sheet (L00–L06)</span><span>Fall 2026 · Two hand-written A4 sheets allowed</span></div>
+<div class="cols">${body}</div>
+</body></html>`);
+  console.log('built cheatsheet-print.html @ ' + CS_PT + 'pt');
+}

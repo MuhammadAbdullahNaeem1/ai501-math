@@ -31,7 +31,9 @@
       { "id": "mid-guide", "title": "Mid guide & formula sheet", "file": "mids/mid-guide.md" },
       { "id": "mid-mock-1", "title": "Mock Mid 1", "file": "mids/mock-1.md" },
       { "id": "mid-mock-2", "title": "Mock Mid 2", "file": "mids/mock-2.md" },
-      { "id": "mid-mock-3", "title": "Mock Mid 3", "file": "mids/mock-3.md" } ] },
+      { "id": "mid-mock-3", "title": "Mock Mid 3", "file": "mids/mock-3.md" },
+      { "id": "mid-mock-4", "title": "Mock Mid 4 (official format)", "file": "mids/mock-4.md" },
+      { "id": "cheatsheet", "title": "Cheat sheet (2 sheets, 4 sides)", "file": "mids/cheatsheet-page.md" } ] },
     { "section": "Archive" },
     { "id": "quizzes-2026", "title": "Real quizzes 2026 (solved)", "file": "quizzes-2026.md" },
     { "id": "resources", "title": "PDFs, problem sets & past papers", "file": "resources.md" }

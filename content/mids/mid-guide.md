@@ -1,11 +1,13 @@
 # Mid guide & formula sheet
 
-**Mid exam: Sunday 18 October 2026, 9 am – 12 pm, SDSB-B3.** Part 1: MCQs and/or short questions, **45 min**. Part 2: problems, **90–120 min**. Covers everything so far: L00–L06 (vectors → eigenvalue decomposition). Weight: mid + mid viva = 30%.
+**Mid exam: Sunday 18 October 2026, 9 am – 12 pm, SDSB-B3 (official instructions).** Closed book; **two hand-written, two-sided A4 sheets** and a calculator allowed. **Part I: 30 MCQs × 3 pts = 90 pts (40%), 60 min**, select ALL (up to three) correct, −1 per wrong tick, no question below zero. **Part II: 7 problems, 30 pts (60%), 120 min**, show working. Be fluent at **inverting a 2×2 by hand** and **finding eigenvectors of a symmetric matrix once its eigenvalues are given**. No rigorous proofs or tedious steps; the **Hessian is not examined** (Week 10). Mock Mid 4 follows this exact format (Mocks 1–3 use the older 20-MCQ / 8-problem format) — and the [cheat sheet](cheatsheet.html) is a 4-side template for your two sheets. Covers everything so far: L00–L06 (vectors → eigenvalue decomposition). Weight: mid + mid viva = 30%.
 
 <div class="pdf-links">
 <a href="mid-mock-1.html">Mock Mid 1</a>
 <a href="mid-mock-2.html">Mock Mid 2</a>
 <a href="mid-mock-3.html">Mock Mid 3</a>
+<a href="mid-mock-4.html">Mock Mid 4 (official format)</a>
+<a href="cheatsheet.html">Cheat sheet (4 sides)</a>
 <a href="pdfs/past/Mid-2025-Part1.pdf">2025 Mid Part I</a>
 <a href="pdfs/past/Mid-2025-Part2.pdf">2025 Mid Part II (solved)</a>
 <a href="pdfs/past/Mid-2024-Part1.pdf">2024 Mid Part I</a>
