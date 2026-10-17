@@ -326,3 +326,13 @@ details.explain[open] > summary { border-bottom: 1px solid var(--ec); }
 .ex-body > :first-child { margin-top: 0; }
 .ex-body h4 { margin: 1.2rem 0 .4rem; color: var(--ec); font-size: .95rem; }
 @media (max-width: 1020px) { .ex-body { padding: .8rem .85rem .2rem; } details.explain > summary::after { width: 100%; margin-left: 0; } }
+
+/* original past-paper question shown at the top of a worked example */
+.orig-q { border: 1px solid var(--rule); border-left: 3px solid var(--accent, #b4532a); border-radius: 8px; background: var(--bg, #fff); padding: .55rem .9rem .6rem; margin: .5rem 0 .2rem; }
+.oq-head { display: flex; flex-wrap: wrap; gap: .25rem .7rem; align-items: baseline; font-family: var(--sans); font-size: .78rem; margin-bottom: .35rem; }
+.oq-lab { font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+.oq-src a { font-weight: 600; text-decoration: none; }
+.oq-src a:hover { text-decoration: underline; }
+.oq-body > :last-child { margin-bottom: 0; }
+.oq-body .tbl table { font-size: .85em; }
+.oq-sol { font-family: var(--sans); font-size: .74rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); margin: .7rem 0 .25rem; }
