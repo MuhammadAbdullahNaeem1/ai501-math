@@ -101,6 +101,9 @@ function renderBlocks(src, store) {
       const icon = c.type === 'background' ? '\u{1F9E9}' : '\u{1F50D}';
       return `<details class="explain ${c.type}"><summary><span class="ex-icon">${icon}</span><span class="ex-lab">${lab}</span>${title ? `<span class="ex-title">${title}</span>` : ''}</summary><div class="ex-body">${inner}</div></details>`;
     }
+    if (c.type === 'orig') {
+      return `<div class="orig-q"><div class="oq-head"><span class="oq-lab">\u{1F4C4} Original question</span>${title ? `<span class="oq-src">${title}</span>` : ''}</div><div class="oq-body">${inner}</div></div><div class="oq-sol">Worked solution</div>`;
+    }
     if (c.type === 'question') {
       return `<section class="question"><div class="q-head">${title}</div>${inner}</section>`;
     }
