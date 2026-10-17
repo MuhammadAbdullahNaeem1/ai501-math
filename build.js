@@ -104,6 +104,9 @@ function renderBlocks(src, store) {
     if (c.type === 'orig') {
       return `<div class="orig-q"><div class="oq-head"><span class="oq-lab">\u{1F4C4} Original question</span>${title ? `<span class="oq-src">${title}</span>` : ''}</div><div class="oq-body">${inner}</div></div><div class="oq-sol">Worked solution</div>`;
     }
+    if (c.type === 'origc') {
+      return `<details class="orig-q oq-fold"><summary><span class="oq-lab">\u{1F4C4} Original question</span>${title ? `<span class="oq-src">${title}</span>` : ''}<span class="oq-hint">tap to show</span></summary><div class="oq-body">${inner}</div></details>`;
+    }
     if (c.type === 'question') {
       return `<section class="question"><div class="q-head">${title}</div>${inner}</section>`;
     }

@@ -336,3 +336,14 @@ details.explain[open] > summary { border-bottom: 1px solid var(--ec); }
 .oq-body > :last-child { margin-bottom: 0; }
 .oq-body .tbl table { font-size: .85em; }
 .oq-sol { font-family: var(--sans); font-size: .74rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); margin: .7rem 0 .25rem; }
+details.oq-fold { padding: .45rem .9rem; margin: .6rem 0; }
+details.oq-fold > summary { list-style: none; cursor: pointer; display: flex; flex-wrap: wrap; gap: .25rem .7rem; align-items: baseline; font-family: var(--sans); font-size: .78rem; }
+details.oq-fold > summary::-webkit-details-marker { display: none; }
+details.oq-fold > summary::before { content: "▸"; color: var(--muted); }
+details.oq-fold[open] > summary::before { content: "▾"; }
+details.oq-fold .oq-hint { color: var(--faint); margin-left: auto; }
+details.oq-fold[open] .oq-hint { display: none; }
+details.oq-fold[open] > .oq-body { margin-top: .5rem; }
+details.oq-fold .oq-body ul { padding-left: 1.2rem; }
+details.oq-fold .oq-body li { margin: .3rem 0; }
+@media print { details.oq-fold > .oq-body { display: block; } }
