@@ -9,11 +9,15 @@
 - [L04 Supervised learning, kNN and evaluation](pdfs/lectures/L04-Supervised-Learning-kNN.pdf)
 - [L05 Regression, linear, polynomial and regularization](pdfs/lectures/L05-Regression-Regularization.pdf)
 - [L06 Eigenvalue decomposition](pdfs/lectures/L06-Eigenvalue-Decomposition.pdf)
+- [L07 Definite matrices and singular value decomposition](pdfs/lectures/L07-Definite-Matrices-SVD.pdf)
+- [L08 Curse of dimensionality and principal component analysis](pdfs/lectures/L08-Curse-of-Dimensionality-PCA.pdf)
 - [Course outline 2026](pdfs/AI501-Outline-2026.pdf)
 
 ## Revision notes (2026)
 
-[Vectors (traffic control)](pdfs/revision/R01-Vectors.pdf) · [Matrices (traffic networks)](pdfs/revision/R02-Matrices.pdf) · [Rank, spaces, kNN & metrics](pdfs/revision/R03-04-Rank-kNN.pdf) · [Linear & polynomial regression](pdfs/revision/R05-Regression.pdf) · [Ridge & lasso](pdfs/revision/R06-Ridge-Lasso.pdf) · [Eigenvalue decomposition](pdfs/revision/R07-Eigen.pdf)
+[Vectors (traffic control)](pdfs/revision/R01-Vectors.pdf) · [Matrices (traffic networks)](pdfs/revision/R02-Matrices.pdf) · [Rank, spaces, kNN & metrics](pdfs/revision/R03-04-Rank-kNN.pdf) · [Linear & polynomial regression](pdfs/revision/R05-Regression.pdf) · [Ridge & lasso](pdfs/revision/R06-Ridge-Lasso.pdf) · [Eigenvalue decomposition](pdfs/revision/R07-Eigen.pdf) · [Definite matrices & SVD (lifting filter)](pdfs/revision/R08-SVD.pdf) · [Curse of dimensionality & PCA (two sensors)](pdfs/revision/R09-PCA.pdf)
+
+Worked-problems notebook for matrices (symmetric–skew split, left pseudo-inverse, transformations, inverses): [view on GitHub](https://github.com/MuhammadAbdullahNaeem1/ai501-math/blob/main/pdfs/revision/R02-Matrices-Worked-Problems.ipynb) · [download .ipynb](pdfs/revision/R02-Matrices-Worked-Problems.ipynb)
 
 ## Problem sets and tutorials (2026)
 
@@ -25,6 +29,7 @@
 | PSet 4 — rank, kNN, metrics | [PDF](pdfs/psets/PSet-04.pdf) | [PDF](pdfs/psets/PSet-04-Solution.pdf) |
 | PSet 5 — least squares | [PDF](pdfs/psets/PSet-05.pdf) | [PDF](pdfs/psets/PSet-05-Solution.pdf) |
 | PSet 6 — ridge, eigen | [PDF](pdfs/psets/PSet-06.pdf) | [PDF](pdfs/psets/PSet-06-Solution.pdf) |
+| PSet 7 — SVD, PCA | [PDF](pdfs/psets/PSet-07-with-Solutions.pdf) | (solutions inside; worked in [L07](l07-notes.html) and [L08](l08-notes.html) notes) |
 | Tutorial 1 — Gram matrix, 3-D least squares | [PDF](pdfs/psets/Tutorial-01.pdf) | |
 | Worksheet 2 — rank, confusion matrix, curse of dimensionality | [PDF](pdfs/psets/Worksheet-02.pdf) | (solutions inside) |
 | Worksheet 3 — least squares, singular cubic | [PDF](pdfs/psets/Worksheet-03.pdf) | worked in [L05 notes](l05-notes.html) |
