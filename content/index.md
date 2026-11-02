@@ -7,9 +7,11 @@ Fall 2026 · LUMS · Dr. Zubair Khalid · study notes, mock quizzes and mock mid
 <a href="resources.html">All PDFs</a>
 </div>
 
-## 🆕 New: L07 (definite matrices & SVD) and L08 (curse of dimensionality & PCA)
+## 🆕 New: L07 (definite matrices & SVD), L08 (curse of dimensionality & PCA) and L09 (multivariate & matrix calculus)
 
 [L07 notes](l07-notes.html) · [L07 quizzes](l07-quiz.html) · [L08 notes](l08-notes.html) · [L08 quizzes](l08-quiz.html) — the last two lectures of Week 6, with the revision notes, **Problem Set 7 (SVD and PCA, solutions included)** worked inside the notes, and three mock quizzes each.
+
+[L09 notes](l09-notes.html) · [L09 quizzes](l09-quiz.html) — the 1 November calculus lecture: functions $\mathbb R^n\to\mathbb R^m$, partial derivatives and gradients, $\nabla(x^\top Px)$, Jacobian, Hessian, chain rule, Taylor series, and least squares re-derived by calculus. (Slides not uploaded yet; built from the class notes and the outline.)
 
 ## Mid exam — Sunday 18 October (revision material)
 
@@ -30,6 +32,7 @@ Fall 2026 · LUMS · Dr. Zubair Khalid · study notes, mock quizzes and mock mid
 | L06 | Eigenvalue decomposition | [notes](l06-notes.html) | [3 quizzes](l06-quiz.html) | [PDF](pdfs/lectures/L06-Eigenvalue-Decomposition.pdf) |
 | L07 | Definite matrices, singular value decomposition, rank, low-rank approximation | [notes](l07-notes.html) | [3 quizzes](l07-quiz.html) | [PDF](pdfs/lectures/L07-Definite-Matrices-SVD.pdf) |
 | L08 | Curse of dimensionality, principal component analysis | [notes](l08-notes.html) | [3 quizzes](l08-quiz.html) | [PDF](pdfs/lectures/L08-Curse-of-Dimensionality-PCA.pdf) |
+| L09 | Multivariate & matrix calculus: gradient, Jacobian, Hessian, chain rule, Taylor | [notes](l09-notes.html) | [3 quizzes](l09-quiz.html) | (slides not yet uploaded) |
 
 Every notes page starts with the lecture PDF, follows the slides in order, adds the revision-note examples and the problem-set and past-paper questions on that topic, and ends each section with a **★ Remember** line.
 
