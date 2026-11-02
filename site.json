@@ -12,6 +12,8 @@
     {"id": "l04", "title": "L04 · Supervised Learning & kNN", "children": [{"id": "l04-notes", "title": "Notes", "file": "lectures/l04.md"}, {"id": "l04-quiz", "title": "Practice quizzes", "file": "quizzes/l04-quiz.md"}]},
     {"id": "l05", "title": "L05 · Regression & Regularization", "children": [{"id": "l05-notes", "title": "Notes", "file": "lectures/l05.md"}, {"id": "l05-quiz", "title": "Practice quizzes", "file": "quizzes/l05-quiz.md"}]},
     {"id": "l06", "title": "L06 · Eigenvalue Decomposition", "children": [{"id": "l06-notes", "title": "Notes", "file": "lectures/l06.md"}, {"id": "l06-quiz", "title": "Practice quizzes", "file": "quizzes/l06-quiz.md"}]},
+    {"id": "l07", "title": "L07 · Definite Matrices & SVD", "children": [{"id": "l07-notes", "title": "Notes", "file": "lectures/l07.md"}, {"id": "l07-quiz", "title": "Practice quizzes", "file": "quizzes/l07-quiz.md"}]},
+    {"id": "l08", "title": "L08 · Curse of Dimensionality & PCA", "children": [{"id": "l08-notes", "title": "Notes", "file": "lectures/l08.md"}, {"id": "l08-quiz", "title": "Practice quizzes", "file": "quizzes/l08-quiz.md"}]},
     {"section": "Mid exam (18 Oct)"},
     {"id": "mid-guide", "title": "Mid guide & formula sheet", "file": "mids/mid-guide.md"},
     {"id": "mid-mock-1", "title": "Mock Mid 1", "file": "mids/mock-1.md"},

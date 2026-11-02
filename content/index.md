@@ -7,7 +7,11 @@ Fall 2026 · LUMS · Dr. Zubair Khalid · study notes, mock quizzes and mock mid
 <a href="resources.html">All PDFs</a>
 </div>
 
-## 🎯 Up next: Mid exam — Sunday 18 October, 9 am–12 pm (SDSB-B3)
+## 🆕 New: L07 (definite matrices & SVD) and L08 (curse of dimensionality & PCA)
+
+[L07 notes](l07-notes.html) · [L07 quizzes](l07-quiz.html) · [L08 notes](l08-notes.html) · [L08 quizzes](l08-quiz.html) — the last two lectures of Week 6, with the revision notes, **Problem Set 7 (SVD and PCA, solutions included)** worked inside the notes, and three mock quizzes each.
+
+## Mid exam — Sunday 18 October (revision material)
 
 [Mid guide & formula sheet](mid-guide.html) — format decoded from the 2024 and 2025 mids, a topic-by-topic checklist, every formula on one page, and exam strategy for the "−1 per wrong tick" MCQs.
 
@@ -24,6 +28,8 @@ Fall 2026 · LUMS · Dr. Zubair Khalid · study notes, mock quizzes and mock mid
 | L04 | Supervised learning, kNN, classifier evaluation | [notes](l04-notes.html) | [3 quizzes](l04-quiz.html) | [PDF](pdfs/lectures/L04-Supervised-Learning-kNN.pdf) |
 | L05 | Linear & polynomial regression, ridge, lasso | [notes](l05-notes.html) | [3 quizzes](l05-quiz.html) | [PDF](pdfs/lectures/L05-Regression-Regularization.pdf) |
 | L06 | Eigenvalue decomposition | [notes](l06-notes.html) | [3 quizzes](l06-quiz.html) | [PDF](pdfs/lectures/L06-Eigenvalue-Decomposition.pdf) |
+| L07 | Definite matrices, singular value decomposition, rank, low-rank approximation | [notes](l07-notes.html) | [3 quizzes](l07-quiz.html) | [PDF](pdfs/lectures/L07-Definite-Matrices-SVD.pdf) |
+| L08 | Curse of dimensionality, principal component analysis | [notes](l08-notes.html) | [3 quizzes](l08-quiz.html) | [PDF](pdfs/lectures/L08-Curse-of-Dimensionality-PCA.pdf) |
 
 Every notes page starts with the lecture PDF, follows the slides in order, adds the revision-note examples and the problem-set and past-paper questions on that topic, and ends each section with a **★ Remember** line.
 
