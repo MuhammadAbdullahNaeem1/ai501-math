@@ -347,3 +347,18 @@ details.oq-fold[open] > .oq-body { margin-top: .5rem; }
 details.oq-fold .oq-body ul { padding-left: 1.2rem; }
 details.oq-fold .oq-body li { margin: .3rem 0; }
 @media print { details.oq-fold > .oq-body { display: block; } }
+
+/* ===== clean maths: labelled steps and boxed results (house style) ===== */
+.katex-display > .katex { font-size: 1.16em; }
+.steps { margin: 1rem 0 1.35rem; }
+.steps .st { margin: 0 0 1.05rem; }
+.steps .lb, .result > .lb { font-family: var(--sans); font-size: .8rem; letter-spacing: .01em; color: var(--muted); margin: 0 0 .15rem; }
+.steps .lb .katex { font-size: 1em; }
+.steps .eq .katex-display { margin: .15rem 0 .1rem; padding: .25rem 0; }
+.steps .eq .katex-display > .katex { font-size: 1.18em; }
+.result { border: 1px solid var(--rule); border-radius: 12px; padding: .55rem 1.1rem .35rem; margin: .9rem 0 1.3rem; }
+.result .katex-display { margin: .3rem 0 .4rem; }
+.result > p { margin: .3rem 0; }
+@media (max-width: 420px) { .steps .eq .katex-display > .katex, .katex-display > .katex { font-size: 1em; } }
+.steps .katex-display, .result .katex-display { text-align: left; }
+.steps .katex-display > .katex, .result .katex-display > .katex { text-align: left; }

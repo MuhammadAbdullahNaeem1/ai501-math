@@ -107,6 +107,20 @@ function renderBlocks(src, store) {
     if (c.type === 'origc') {
       return `<details class="orig-q oq-fold"><summary><span class="oq-lab">\u{1F4C4} Original question</span>${title ? `<span class="oq-src">${title}</span>` : ''}<span class="oq-hint">tap to show</span></summary><div class="oq-body">${inner}</div></details>`;
     }
+    if (c.type === 'steps') {
+      const raw = c.children.map(x => x.md || '').join('\n').split('\n');
+      const groups = []; let g = null;
+      for (const ln of raw) {
+        const t = ln.trim(); if (!t) continue;
+        const m = t.match(/^(\d+)$/);
+        if (m && store[+m[1]].html !== undefined) { if (!g) { g = { lab: '', eq: [] }; groups.push(g); } g.eq.push(store[+m[1]].html); }
+        else { if (!g || g.eq.length) { g = { lab: '', eq: [] }; groups.push(g); } g.lab += (g.lab ? ' ' : '') + t; }
+      }
+      return `<div class="steps">${groups.map(x => `<div class="st">${x.lab ? `<div class="lb">${restore(marked.parseInline(x.lab), store)}</div>` : ''}${x.eq.length ? `<div class="eq">${x.eq.join('')}</div>` : ''}</div>`).join('')}</div>`;
+    }
+    if (c.type === 'result') {
+      return `<div class="result">${title ? `<div class="lb">${title}</div>` : ''}${inner}</div>`;
+    }
     if (c.type === 'question') {
       return `<section class="question"><div class="q-head">${title}</div>${inner}</section>`;
     }
