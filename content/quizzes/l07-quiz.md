@@ -1,154 +1,157 @@
-# L07 · Practice quizzes — Definite matrices & SVD
+# L07 · Practice quizzes — Singular value decomposition
 
-Three mock quizzes, **20 minutes and 10 marks** each, in the style of the 2026 quizzes, PSet 7 and the SVD questions of the 2024 and 2025 mids (storage of a rank-$k$ image, the best rank-1 approximation).
+Three mock quizzes, **20 minutes and 10 marks** each, in the style of the 2026 quizzes: true/false with a one-line justification, then short calculations. Every number below has been checked by hand.
 
 <div class="pdf-links">
 <a href="l07-notes.html">L07 notes</a>
-<a href="pdfs/psets/PSet-07-with-Solutions.pdf">PSet 7 with solutions (P1–P4, P9)</a>
-<a href="pdfs/past/Mid-2025-Part2.pdf">2025 Mid Part II (P1, P10)</a>
+<a href="pdfs/psets/PSet-07.pdf">PSet 7 with solutions (P1–P4, P9)</a>
+<a href="quiz6-prep.html">Quiz 6 prep page</a>
 </div>
 
 ## Mock Quiz 7A
 
-:::question Question 1 (5 marks)
-Let $A=\begin{bmatrix}4&0\\3&-5\end{bmatrix}$.
+:::question Question 1 (3 marks)
+True or False? Give a one-line justification for each.
 
-1. Compute $A^\top A$ and the singular values of $A$. *(2 marks)*
-2. Find $V$ and then $U$, and write $A=U\Sigma V^\top$. *(2 marks)*
-3. Check your singular values against $\det A$ and $\|A\|_F$. *(1 mark)*
+1. Every real matrix, of any shape, has a singular value decomposition.
+2. The singular values of a symmetric matrix are its eigenvalues.
+3. If $A\in\mathbb{R}^{5\times3}$ has rank 3, then $AA^\top$ is positive definite.
+
+:::solution
+1. **True.** The SVD exists for every $A\in\mathbb{R}^{m\times n}$ — that is its main advantage over the eigen-decomposition.
+2. **False.** They are the **absolute values** of the eigenvalues: $\operatorname{diag}(3,-2)$ has eigenvalues $3,-2$ but singular values $3,2$ (singular values are never negative).
+3. **False.** $AA^\top$ is $5\times5$ with rank 3, so it has $5-3=2$ zero eigenvalues: it is PSD but **not** PD. (It is $A^\top A$, $3\times3$ of rank 3, that is PD.)
+
+*1 mark each: ½ for the verdict, ½ for the justification.*
+:::
+:::
+
+:::question Question 2 (5 marks)
+Let $A=\begin{bmatrix}2&2\\-1&1\end{bmatrix}$.
+
+1. Compute $A^\top A$ and its eigenvalues, and hence the singular values of $A$. *(2 marks)*
+2. Find $V$ and then $U$ using $u_i=Av_i/\sigma_i$, and write $A=U\Sigma V^\top$. *(2 marks)*
+3. Check your singular values against $|\det A|$ and $\|A\|_F$. *(1 mark)*
 
 :::solution
 1.
 $$
-A^\top A=\begin{bmatrix}4&3\\0&-5\end{bmatrix}\begin{bmatrix}4&0\\3&-5\end{bmatrix}=\begin{bmatrix}25&-15\\-15&25\end{bmatrix}.
+A^\top A=\begin{bmatrix}2&-1\\2&1\end{bmatrix}\begin{bmatrix}2&2\\-1&1\end{bmatrix}=\begin{bmatrix}5&3\\3&5\end{bmatrix}.
 $$
-   $(25-\lambda)^2=225$ gives $\lambda=40$ and $10$, so $\sigma_1=\sqrt{40}=2\sqrt{10}\approx6.32$ and $\sigma_2=\sqrt{10}\approx3.16$.
-2. For $\lambda=40$: $(A^\top A-40I)v=\begin{bmatrix}-15&-15\\-15&-15\end{bmatrix}v=\mathbf 0$ gives $v_1=\tfrac1{\sqrt2}(1,-1)$; for $\lambda=10$, $v_2=\tfrac1{\sqrt2}(1,1)$. Then
+   It has the form $\begin{bmatrix}a&b\\b&a\end{bmatrix}$, so its eigenvalues are $a\pm b=8$ and $2$. Hence
 $$
-u_1=\frac{Av_1}{\sigma_1}=\frac{1}{2\sqrt{10}}\cdot\frac{1}{\sqrt2}\begin{bmatrix}4\\8\end{bmatrix}=\frac{1}{\sqrt5}\begin{bmatrix}1\\2\end{bmatrix},\qquad
-u_2=\frac{Av_2}{\sigma_2}=\frac{1}{\sqrt{10}}\cdot\frac{1}{\sqrt2}\begin{bmatrix}4\\-2\end{bmatrix}=\frac{1}{\sqrt5}\begin{bmatrix}2\\-1\end{bmatrix}.
+\sigma_1=\sqrt8=2\sqrt2,\qquad \sigma_2=\sqrt2 .
+$$
+2. The unit eigenvectors of $A^\top A$ are $v_1=\tfrac{1}{\sqrt2}(1,1)$ (for 8) and $v_2=\tfrac{1}{\sqrt2}(1,-1)$ (for 2). Then
+$$
+u_1=\frac{Av_1}{\sigma_1}=\frac{1}{2\sqrt2}\cdot\frac{1}{\sqrt2}\begin{bmatrix}4\\0\end{bmatrix}=\begin{bmatrix}1\\0\end{bmatrix},\qquad
+u_2=\frac{Av_2}{\sigma_2}=\frac{1}{\sqrt2}\cdot\frac{1}{\sqrt2}\begin{bmatrix}0\\-2\end{bmatrix}=\begin{bmatrix}0\\-1\end{bmatrix},
 $$
 $$
-A=\underbrace{\frac{1}{\sqrt5}\begin{bmatrix}1&2\\2&-1\end{bmatrix}}_{U}\underbrace{\begin{bmatrix}2\sqrt{10}&0\\0&\sqrt{10}\end{bmatrix}}_{\Sigma}\underbrace{\frac{1}{\sqrt2}\begin{bmatrix}1&-1\\1&1\end{bmatrix}}_{V^\top}.
+A=\underbrace{\begin{bmatrix}1&0\\0&-1\end{bmatrix}}_{U}\underbrace{\begin{bmatrix}2\sqrt2&0\\0&\sqrt2\end{bmatrix}}_{\Sigma}\underbrace{\frac{1}{\sqrt2}\begin{bmatrix}1&1\\1&-1\end{bmatrix}}_{V^\top}.
 $$
-3. $\sigma_1\sigma_2=2\sqrt{10}\cdot\sqrt{10}=20=|\det A|=|-20|$ ✓, and $\sigma_1^2+\sigma_2^2=50=16+0+9+25=\|A\|_F^2$ ✓.
+   (Multiply out to check: row 1 is $2\sqrt2\cdot\tfrac{1}{\sqrt2}(1,1)=(2,2)$ and row 2 is $-\sqrt2\cdot\tfrac{1}{\sqrt2}(1,-1)=(-1,1)$ ✓.)
+3. $\sigma_1\sigma_2=2\sqrt2\cdot\sqrt2=4=|\det A|=|2\cdot1-2\cdot(-1)|$ ✓, and $\sigma_1^2+\sigma_2^2=8+2=10=4+4+1+1=\|A\|_F^2$ ✓.
 
-*Marking:* 1 for $A^\top A$, 1 for $\sigma$'s; 1 for $V$, 1 for $U$ via $Av_i/\sigma_i$ (taking $U$ from a separate EVD of $AA^\top$ without checking signs loses the mark); 1 for a check.
-:::
-:::
-
-:::question Question 2 (3 marks)
-Classify each symmetric matrix as PD, PSD (not PD), or indefinite. Justify briefly.
-$$
-P=\begin{bmatrix}6&2\\2&3\end{bmatrix},\qquad Q=\begin{bmatrix}1&3\\3&1\end{bmatrix},\qquad R=\begin{bmatrix}4&2\\2&1\end{bmatrix}.
-$$
-
-:::solution
-- $P$: $\operatorname{tr}=9$, $\det=18-4=14>0$, so $\lambda=7,2$ — both positive: **PD**.
-- $Q$: $\det=1-9=-8<0$, so the eigenvalues ($4$ and $-2$) have opposite signs: **indefinite**. (E.g. $x=(1,-1)$ gives $1-6+1=-4<0$.)
-- $R$: $\det=4-4=0$ and $\operatorname{tr}=5$, so $\lambda=5,0$: **PSD, not PD**. $x^\top Rx=(2x_1+x_2)^2$, which is $0$ at $x=(1,-2)$.
+*Marking: 1 for $A^\top A$, 1 for the $\sigma$'s; 1 for $V$, 1 for $U$ via $Av_i/\sigma_i$; 1 for either check.*
 :::
 :::
 
 :::question Question 3 (2 marks)
-True or false, with a reason.
-
-1. For every square matrix, the singular values are the absolute values of the eigenvalues.
-2. If $A\in\mathbb R^{4\times6}$, then $A^\top A$ has at least two zero eigenvalues.
+A $3\times3$ matrix has singular values $6$, $3$ and $1$. Find (a) its rank; (b) $\det(A^\top A)$; (c) $\|A-A_1\|_F$ and the fraction of energy kept by the rank-one approximation $A_1$.
 
 :::solution
-1. **False.** It holds for symmetric matrices only. $B=\begin{bmatrix}3&0\\4&5\end{bmatrix}$ has eigenvalues $3,5$ (triangular) but singular values $3\sqrt5\approx6.71$ and $\sqrt5\approx2.24$.
-2. **True.** $A^\top A$ is $6\times6$ with rank $=\operatorname{rank}A\le4$, so at least $6-4=2$ of its eigenvalues are $0$.
+(a) Three non-zero singular values: **rank 3**.
+(b) The eigenvalues of $A^\top A$ are $\sigma_i^2=36,9,1$, so $\det(A^\top A)=36\cdot9\cdot1=\mathbf{324}$ (also $=(\det A)^2=(6\cdot3\cdot1)^2$).
+(c) $\|A-A_1\|_F=\sqrt{3^2+1^2}=\sqrt{10}\approx3.16$; energy kept $=\dfrac{36}{36+9+1}=\dfrac{36}{46}\approx\mathbf{78.3\%}$.
+
+*½ + ½ + 1.*
 :::
 :::
 
 ## Mock Quiz 7B
 
-:::question Question 1 (5 marks)
-Let $A=\begin{bmatrix}1&0\\0&1\\1&1\end{bmatrix}$.
+:::question Question 1 (3 marks)
+Classify each symmetric matrix as PD, PSD, ND, NSD or indefinite, using its eigenvalues.
 
-1. State the shapes of $U$, $\Sigma$ and $V$ in $A=U\Sigma V^\top$, and compute the singular values. *(2 marks)*
-2. Find $v_1,v_2$ and $u_1,u_2$. *(2 marks)*
-3. Find $u_3$, and say what it represents geometrically. *(1 mark)*
+1. $\begin{bmatrix}2&-1\\-1&2\end{bmatrix}$
+2. $\begin{bmatrix}1&3\\3&1\end{bmatrix}$ — and give a vector $x$ with $x^\top Ax<0$.
+3. $\begin{bmatrix}-2&0\\0&0\end{bmatrix}$
 
 :::solution
-1. $U:3\times3$, $\Sigma:3\times2$ (one zero row), $V:2\times2$. $A^\top A=\begin{bmatrix}2&1\\1&2\end{bmatrix}$ has eigenvalues $3$ and $1$, so $\sigma_1=\sqrt3\approx1.73$ and $\sigma_2=1$.
-2. $v_1=\tfrac1{\sqrt2}(1,1)$, $v_2=\tfrac1{\sqrt2}(1,-1)$, and
+1. Of the form $\begin{bmatrix}a&b\\b&a\end{bmatrix}$: $\lambda=a\pm b=3,\ 1$, both positive: **PD**.
+2. Trace $2$, determinant $1-9=-8<0$, so the eigenvalues have opposite signs ($4$ and $-2$): **indefinite**. For $x=(1,-1)$: $Ax=(-2,2)$ and $x^\top Ax=-2-2=-4<0$ (while $x=(1,1)$ gives $+8$).
+3. Diagonal, so $\lambda=-2,\ 0$: all $\le0$ with a zero: **NSD** (not ND).
+:::
+:::
+
+:::question Question 2 (4 marks)
+1. Show that $A^\top A$ is positive semi-definite for **every** matrix $A$. When is it positive definite? *(2 marks)*
+2. $A\in\mathbb{R}^{4\times2}$ has independent columns. Give the shapes of $U$, $\Sigma$ and $V$ in its SVD, and the number of zero eigenvalues of $AA^\top$. *(2 marks)*
+
+:::solution
+1. For any $x$,
 $$
-u_1=\frac{Av_1}{\sqrt3}=\frac{1}{\sqrt6}\begin{bmatrix}1\\1\\2\end{bmatrix},\qquad u_2=\frac{Av_2}{1}=\frac{1}{\sqrt2}\begin{bmatrix}1\\-1\\0\end{bmatrix}.
+x^\top(A^\top A)x=(Ax)^\top(Ax)=\|Ax\|^2\ge0 ,
 $$
-3. $u_3$ solves $A^\top w=\mathbf 0$: $w_1+w_3=0$ and $w_2+w_3=0$, so $u_3=\tfrac1{\sqrt3}(1,1,-1)$. It is the normal to the plane $y_3=y_1+y_2$ that contains every output $Ax$ — a direction $A$ never reaches (it spans $\mathcal N(A^\top)$).
+   so $A^\top A\succeq0$. It is **PD** exactly when $Ax=\mathbf 0$ only for $x=\mathbf 0$, i.e. when the **columns of $A$ are linearly independent**.
+2. $U$ is $4\times4$, $\Sigma$ is $4\times2$ (two zero rows), $V$ is $2\times2$. $AA^\top$ is $4\times4$ with rank 2, so it has $4-2=\mathbf 2$ zero eigenvalues.
 :::
 :::
 
-:::question Question 2 (3 marks)
-A $50\times40$ matrix $A$ has singular values $8,\ 4,\ 1$, and all the others are $0$.
-
-1. What is $\operatorname{rank}A$? *(1 mark)*
-2. For the rank-2 approximation $A_2$, give $\|A-A_2\|_F$ and the fraction of $\|A\|_F^2$ kept. *(1 mark)*
-3. How many numbers are needed to store $A_2$, compared with $A$? *(1 mark)*
+:::question Question 3 (3 marks)
+A matrix has SVD $A=U\Sigma V^\top$ with
+$$
+U=\begin{bmatrix}0&1\\1&0\end{bmatrix},\qquad \Sigma=\begin{bmatrix}5&0\\0&2\end{bmatrix},\qquad V=\frac{1}{\sqrt2}\begin{bmatrix}1&-1\\1&1\end{bmatrix}.
+$$
+1. Which unit input direction is stretched most, and where does it land? *(1 mark)*
+2. Describe the image of the unit circle and give its area. *(2 marks)*
 
 :::solution
-1. Three non-zero singular values: $\operatorname{rank}A=3$.
-2. $\|A-A_2\|_F=\sqrt{1^2}=1$; kept $\dfrac{64+16}{64+16+1}=\dfrac{80}{81}\approx98.8\%$.
-3. $2(50+40+1)=182$ numbers, against $50\cdot40=2000$.
-:::
-:::
-
-:::question Question 3 (2 marks)
-Show that $A^\top A$ is positive semi-definite for every matrix $A$, and use this to explain why singular values are never negative.
-
-:::solution
-For any $x$, $x^\top(A^\top A)x=(Ax)^\top(Ax)=\|Ax\|_2^2\ge0$, so $A^\top A$ is PSD *(1 mark)*. Since it is also symmetric, its eigenvalues are real and $\ge0$; the singular values are $\sigma_i=\sqrt{\lambda_i(A^\top A)}$, the non-negative square roots *(1 mark)*.
+1. $v_1=\tfrac{1}{\sqrt2}(1,1)$, stretched by $\sigma_1=5$ and sent to $\sigma_1u_1=5\,(0,1)=(0,5)$ (since $Av_1=\sigma_1u_1$).
+2. An **ellipse** with semi-axes $\sigma_1u_1=(0,5)$ (length 5, vertical) and $\sigma_2u_2=(2,0)$ (length 2, horizontal). Its area is $\pi\sigma_1\sigma_2=10\pi$, so $|\det A|=10$.
 :::
 :::
 
 ## Mock Quiz 7C
 
 :::question Question 1 (4 marks)
-A matrix has SVD
-$$
-A=U\Sigma V^\top,\qquad U=\frac{1}{\sqrt2}\begin{bmatrix}1&1\\1&-1\end{bmatrix},\quad\Sigma=\begin{bmatrix}4&0\\0&2\end{bmatrix},\quad V=I_2 .
-$$
+Use the SVD of $A=\begin{bmatrix}2&2\\-1&1\end{bmatrix}$ from Quiz 7A: $\sigma_1=2\sqrt2$, $u_1=(1,0)$, $v_1=\tfrac{1}{\sqrt2}(1,1)$; $\sigma_2=\sqrt2$, $u_2=(0,-1)$, $v_2=\tfrac{1}{\sqrt2}(1,-1)$.
 
-1. What is the largest value of $\|Ax\|$ over unit vectors $x$, and which $x$ attains it? *(1 mark)*
-2. Compute $\det(A^\top A)$ and $|\det A|$. *(1 mark)*
-3. Compute the best rank-1 approximation $A_1$ and $\|A-A_1\|_F$. *(2 marks)*
+1. Compute the rank-one approximation $A_1=\sigma_1u_1v_1^\top$. *(2 marks)*
+2. Compute $A-A_1$ and verify that $\|A-A_1\|_F^2=\sigma_2^2$. What fraction of the energy does $A_1$ keep? *(2 marks)*
 
 :::solution
-1. $\sigma_1=4$, attained at $x=\pm v_1=\pm(1,0)$.
-2. $\det(A^\top A)=\sigma_1^2\sigma_2^2=16\cdot4=64$, and $|\det A|=\sigma_1\sigma_2=8$.
-3.
+1.
 $$
-A_1=\sigma_1u_1v_1^\top=4\cdot\frac{1}{\sqrt2}\begin{bmatrix}1\\1\end{bmatrix}\begin{bmatrix}1&0\end{bmatrix}=\begin{bmatrix}2\sqrt2&0\\2\sqrt2&0\end{bmatrix},\qquad \|A-A_1\|_F=\sigma_2=2 .
+A_1=2\sqrt2\begin{bmatrix}1\\0\end{bmatrix}\frac{1}{\sqrt2}\begin{bmatrix}1&1\end{bmatrix}=2\begin{bmatrix}1&1\\0&0\end{bmatrix}=\begin{bmatrix}2&2\\0&0\end{bmatrix}.
 $$
+2. $A-A_1=\begin{bmatrix}0&0\\-1&1\end{bmatrix}$, so $\|A-A_1\|_F^2=1+1=2=(\sqrt2)^2=\sigma_2^2$ ✓. Energy kept $=\dfrac{8}{8+2}=\mathbf{80\%}$.
 :::
 :::
 
 :::question Question 2 (3 marks)
-A $1200\times900$ grey-scale photo is compressed with a rank-60 SVD approximation.
-
-1. How many numbers does the original need, and how many the approximation? *(2 marks)*
-2. What percentage of storage is saved? *(1 mark)*
+A greyscale image is a $600\times400$ matrix. How many numbers are stored for (a) the image itself and (b) its rank-30 SVD approximation? (c) Why does a larger $k$ improve quality but reduce compression?
 
 :::solution
-1. Original: $1200\cdot900=1\,080\,000$. Rank-60: $60(1200+900+1)=60\cdot2101=126\,060$.
-2. $1-126\,060/1\,080\,000\approx1-0.1167=88.33\%$ saved.
+(a) $600\times400=240{,}000$.
+(b) $k(m+n+1)=30(600+400+1)=30{,}030$ — about **12.5%** of the original.
+(c) Each extra layer can only lower (or keep) the approximation error $\sum_{i>k}\sigma_i^2$, so detail improves; but each costs $m+n+1=1001$ more numbers.
 :::
 :::
 
 :::question Question 3 (3 marks)
-Let $R=\begin{bmatrix}2&2\\1&1\end{bmatrix}$.
+Fifty measured points in $\mathbb{R}^3$ are stacked as the columns of $A\in\mathbb{R}^{3\times50}$. Its singular values are $12.1$, $0.09$ and $0.06$.
 
-1. Find the singular values, $v_1$ and $u_1$. *(2 marks)*
-2. Describe what $R$ does to the unit circle, and name the input direction it destroys. *(1 mark)*
+1. What is the approximate rank, and what does it say about the points? Which singular vector gives their main direction? *(1.5 marks)*
+2. Which of these are true? (a) rank = number of non-zero singular values; (b) a singular value can be negative; (c) the $\sigma_i^2$ are the eigenvalues of $A^\top A$ (the non-zero ones); (d) $u_i=Av_i/\sigma_i$ for $\sigma_i>0$. *(1.5 marks)*
 
 :::solution
-1. $R^\top R=\begin{bmatrix}5&5\\5&5\end{bmatrix}$ has eigenvalues $10$ and $0$, so $\sigma_1=\sqrt{10}$, $\sigma_2=0$ (rank 1). $v_1=\tfrac1{\sqrt2}(1,1)$ and $u_1=\dfrac{Rv_1}{\sqrt{10}}=\dfrac{1}{\sqrt{20}}(4,2)=\dfrac{1}{\sqrt5}(2,1)$.
-2. The ellipse has zero width: the circle is flattened onto the segment from $-\sqrt{10}\,u_1$ to $\sqrt{10}\,u_1$ (length $2\sqrt{10}\approx6.32$) along $(2,1)$. The direction $v_2=\tfrac1{\sqrt2}(1,-1)$ is sent to $\mathbf 0$ — it spans $\mathcal N(R)$.
+1. One singular value is large and two are at noise level (a clear gap $12.1\to0.09$): **approximate rank 1**. The points lie almost on a **line through the origin** in $\mathbb{R}^3$, along the left singular vector $u_1$.
+2. **(a), (c), (d) true; (b) false** — singular values are square roots of the eigenvalues of the PSD matrix $A^\top A$, so they are $\ge0$.
 :::
 :::
 
 :::remember
-The SVD quiz recipe: $A^\top A$ → eigenvalues → $\sigma_i=\sqrt{\lambda_i}$ → unit $v_i$ → $u_i=Av_i/\sigma_i$ → complete $U$ with $A^\top w=\mathbf 0$ → check $\prod\sigma_i=|\det A|$ and $\sum\sigma_i^2=\|A\|_F^2$. Storage of $A_k$ is $k(m+n+1)$; its squared Frobenius error is $\sum_{i>k}\sigma_i^2$.
+The SVD quiz recipe: $A^\top A\to$ eigenvalues $\to\sigma_i=\sqrt{\lambda_i}$; unit eigenvectors $\to V$; $u_i=Av_i/\sigma_i$; check $\sigma_1\cdots\sigma_n=|\det A|$ and $\sum\sigma_i^2=\|A\|_F^2$. Rank = number of non-zero $\sigma$; $A_k$ error $=\sum_{i>k}\sigma_i^2$; storage $k(m+n+1)$.
 :::
