@@ -17,6 +17,7 @@
     {"id": "l09", "title": "L09 · Vector Calculus & Gradient Descent", "children": [{"id": "l09-notes", "title": "Notes", "file": "lectures/l09.md"}, {"id": "l09-quiz", "title": "Practice quizzes", "file": "quizzes/l09-quiz.md"}]},
     {"section": "Quiz 6 (SVD · PCA · calculus)"},
     {"id": "quiz6-prep", "title": "★ Quiz 6 prep: scope, Worksheet 4, mocks", "file": "quiz6-prep.md"},
+    {"id": "pset07-explained", "title": "★ PSet 7 explained in depth", "file": "psets/pset07-explained.md"},
     {"section": "Mid exam (18 Oct)"},
     {"id": "mid-guide", "title": "Mid guide & formula sheet", "file": "mids/mid-guide.md"},
     {"id": "mid-mock-1", "title": "Mock Mid 1", "file": "mids/mock-1.md"},
