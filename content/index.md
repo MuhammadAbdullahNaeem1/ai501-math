@@ -7,17 +7,13 @@ Fall 2026 · LUMS · Dr. Zubair Khalid · study notes, mock quizzes and mock mid
 <a href="resources.html">All PDFs</a>
 </div>
 
-## 🆕 New: L07 (definite matrices & SVD), L08 (curse of dimensionality & PCA) and L09 (multivariate & matrix calculus)
+## 🎯 Up next: Quiz 6 — SVD, PCA and calculus (functions & differentiation)
 
-[L07 notes](l07-notes.html) · [L07 quizzes](l07-quiz.html) · [L08 notes](l08-notes.html) · [L08 quizzes](l08-quiz.html) — the last two lectures of Week 6, with the revision notes, **Problem Set 7 (SVD and PCA, solutions included)** worked inside the notes, and three mock quizzes each.
+**[Quiz 6 prep page](quiz6-prep.html)** — what is in and out, the must-know formulas, Tutorial Worksheet 4 solved (Taylor marked optional) and two full mock quizzes. New notes: [L07 SVD](l07-notes.html) · [L08 PCA](l08-notes.html) · [L09 Vector calculus](l09-notes.html), each with three practice quizzes.
 
-[L09 notes](l09-notes.html) · [L09 quizzes](l09-quiz.html) — the 1 November calculus lecture: functions $\mathbb R^n\to\mathbb R^m$, partial derivatives and gradients, $\nabla(x^\top Px)$, Jacobian, Hessian, chain rule, Taylor series, and least squares re-derived by calculus. (Slides not uploaded yet; built from the class notes and the outline.)
+## Mid exam (done — 18 October)
 
-## Mid exam — Sunday 18 October (revision material)
-
-[Mid guide & formula sheet](mid-guide.html) — format decoded from the 2024 and 2025 mids, a topic-by-topic checklist, every formula on one page, and exam strategy for the "−1 per wrong tick" MCQs.
-
-[Mock Mid 1](mid-mock-1.html) · [Mock Mid 2](mid-mock-2.html) · [Mock Mid 3](mid-mock-3.html) — full papers in the older format (20 select-all MCQs + 8 problems). **[Mock Mid 4](mid-mock-4.html)** follows the official 2026 format: 30 MCQs × 3 pts (60 min) + 7 problems / 30 pts (120 min). **[Cheat sheet](cheatsheet.html)**: every formula on 4 A4 sides (2 sheets, 2 columns) — copy it by hand for the exam.
+[Mid guide & formula sheet](mid-guide.html) · [Mock Mids 1–3](mid-mock-1.html) · [Mock Mid 4 (official format)](mid-mock-4.html) · [Cheat sheet](cheatsheet.html)
 
 ## Lectures so far
 
@@ -30,9 +26,9 @@ Fall 2026 · LUMS · Dr. Zubair Khalid · study notes, mock quizzes and mock mid
 | L04 | Supervised learning, kNN, classifier evaluation | [notes](l04-notes.html) | [3 quizzes](l04-quiz.html) | [PDF](pdfs/lectures/L04-Supervised-Learning-kNN.pdf) |
 | L05 | Linear & polynomial regression, ridge, lasso | [notes](l05-notes.html) | [3 quizzes](l05-quiz.html) | [PDF](pdfs/lectures/L05-Regression-Regularization.pdf) |
 | L06 | Eigenvalue decomposition | [notes](l06-notes.html) | [3 quizzes](l06-quiz.html) | [PDF](pdfs/lectures/L06-Eigenvalue-Decomposition.pdf) |
-| L07 | Definite matrices, singular value decomposition, rank, low-rank approximation | [notes](l07-notes.html) | [3 quizzes](l07-quiz.html) | [PDF](pdfs/lectures/L07-Definite-Matrices-SVD.pdf) |
-| L08 | Curse of dimensionality, principal component analysis | [notes](l08-notes.html) | [3 quizzes](l08-quiz.html) | [PDF](pdfs/lectures/L08-Curse-of-Dimensionality-PCA.pdf) |
-| L09 | Multivariate & matrix calculus: gradient, Jacobian, Hessian, chain rule, Taylor | [notes](l09-notes.html) | [3 quizzes](l09-quiz.html) | (slides not yet uploaded) |
+| L07 | Definite matrices, singular value decomposition, rank, low-rank approximation | [notes](l07-notes.html) | [3 quizzes](l07-quiz.html) | [PDF](pdfs/lectures/L07-SVD.pdf) |
+| L08 | Curse of dimensionality, principal component analysis | [notes](l08-notes.html) | [3 quizzes](l08-quiz.html) | [PDF](pdfs/lectures/L08-PCA.pdf) |
+| L09 | Vector calculus: functions, derivatives, gradient, Jacobian, Hessian, Taylor, convexity, gradient descent | [notes](l09-notes.html) | [3 quizzes](l09-quiz.html) | [PDF](pdfs/lectures/L09-Vector-Calculus.pdf) |
 
 Every notes page starts with the lecture PDF, follows the slides in order, adds the revision-note examples and the problem-set and past-paper questions on that topic, and ends each section with a **★ Remember** line.
 
