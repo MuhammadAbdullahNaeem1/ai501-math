@@ -15,6 +15,8 @@
     {"id": "l07", "title": "L07 · Singular Value Decomposition", "children": [{"id": "l07-notes", "title": "Notes", "file": "lectures/l07.md"}, {"id": "l07-quiz", "title": "Practice quizzes", "file": "quizzes/l07-quiz.md"}]},
     {"id": "l08", "title": "L08 · Curse of Dimensionality & PCA", "children": [{"id": "l08-notes", "title": "Notes", "file": "lectures/l08.md"}, {"id": "l08-quiz", "title": "Practice quizzes", "file": "quizzes/l08-quiz.md"}]},
     {"id": "l09", "title": "L09 · Vector Calculus & Gradient Descent", "children": [{"id": "l09-notes", "title": "Notes", "file": "lectures/l09.md"}, {"id": "l09-quiz", "title": "Practice quizzes", "file": "quizzes/l09-quiz.md"}]},
+    {"section": "Quiz 7 (convexity · gradient descent)"},
+    {"id": "quiz7-prep", "title": "★ Quiz 7 prep: affine/convex, GD, PSet 8 P6–P9", "file": "quiz7-prep.md"},
     {"section": "Quiz 6 (SVD · PCA · calculus)"},
     {"id": "quiz6-prep", "title": "★ Quiz 6 prep: scope, Worksheet 4, mocks", "file": "quiz6-prep.md"},
     {"id": "pset07-explained", "title": "★ PSet 7 explained in depth", "file": "psets/pset07-explained.md"},

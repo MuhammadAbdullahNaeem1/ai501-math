@@ -1,6 +1,6 @@
 # L09 · Practice quizzes — Vector calculus
 
-Three mock quizzes, **20 minutes and 10 marks** each. **9A and 9B** cover functions and differentiation — the scope of this week's quiz. **9C** covers Taylor series (optional this week), convexity and gradient descent (not in this week's quiz). Every number below has been checked by hand.
+Three mock quizzes, **20 minutes and 10 marks** each. **9A and 9B** cover functions and differentiation — the scope of this week's quiz. **9C** covers Taylor series, convexity and gradient descent — the Quiz 7 syllabus (more on the [Quiz 7 prep page](quiz7-prep.html)). Every number below has been checked by hand.
 
 <div class="pdf-links">
 <a href="l09-notes.html">L09 notes</a>
@@ -152,7 +152,7 @@ $$
 :::
 :::
 
-## Mock Quiz 9C — Taylor (optional), convexity and gradient descent (not this week)
+## Mock Quiz 9C — Taylor, convexity and gradient descent (Quiz 7)
 
 :::question Question 1 (3 marks)
 1. Write $T_2$ for $e^x$ at $0$ and use it to estimate $e^{0.1}$. *(1 mark)*

@@ -7,9 +7,11 @@ Fall 2026 · LUMS · Dr. Zubair Khalid · study notes, mock quizzes and mock mid
 <a href="resources.html">All PDFs</a>
 </div>
 
-## 🎯 Up next: Quiz 6 — SVD, PCA and calculus (functions & differentiation)
+## 🎯 Up next: Quiz 7 — affine & convex, gradient descent
 
-**[Quiz 6 prep page](quiz6-prep.html)** — what is in and out, the must-know formulas, Tutorial Worksheet 4 solved (Taylor marked optional) and two full mock quizzes. New notes: [L07 SVD](l07-notes.html) · [L08 PCA](l08-notes.html) · [L09 Vector calculus](l09-notes.html), each with three practice quizzes.
+**[Quiz 7 prep page](quiz7-prep.html)** — L09 slides 23–50 (Taylor, convex functions, gradient descent, SGD, mini-batch) and the last four problems of Problem Set 8, all explained step by step, plus two mock quizzes.
+
+Earlier: [Quiz 6 prep](quiz6-prep.html) · [PSet 7 explained in depth](pset07-explained.html)
 
 ## Mid exam (done — 18 October)
 
